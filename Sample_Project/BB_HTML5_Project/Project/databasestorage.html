@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>  
+  <HEAD> 
+<TITLE> Database storage example</TITLE>
+ <STYLE> 
+            #websqldb-example .record-list li:nth-child(odd) { background-color: lightgreen; }
+            #websqldb-example .record-list li:nth-child(even) { background-color: pink; }
+            #websqldb-example .record-list li {
+              padding-left: 5px;
+            }
+            #db-results {
+              max-height: 150px;
+              overflow: auto;
+              text-align: left;
+            }
+            #websqldb-example .error {
+              color: red;
+            }
+          </STYLE> 
+</HEAD>
+<BODY>
+<DIV class="slide" id="web-sql-db"> 
+          <HEADER><h1>Web SQL Database</h1></HEADER> 
+          <SECTION> 
+          <DIV class="center" id="websqldb-example"> 
+<BUTTON onclick="webSqlSample.createTable()">create table</BUTTON> <BR />
+            <INPUT type="text" id="todoitem" /> 
+            <BUTTON onclick="webSqlSample.newRecord()">Add new item to the table</BUTTON> <BR />
+            <BUTTON onclick="webSqlSample.dropTable()">drop table</BUTTON> 
+            <P>The generated database is given as follows:</P> 
+            <UL class="record-list" id="db-results"></UL> 
+            <DIV id="db-log"></DIV> 
+          </DIV> 
+          <SCRIPT defer> 
+            var webSqlSample = (function() {
+              var db;
+              var log = document.getElementById('db-log');
+              if (window.openDatabase) {
+                db = openDatabase("DBTest", "1.0", "HTML5 Database API example", 200000);
+                showRecords();  
+              }
+              document.getElementById('db-results').addEventListener('click', function(e) { e.preventDefault(); }, false);
+               function onError(tx, error) {
+                log.innerHTML = '<p class="error">Error: ' + error.message + '</p>';
+              }
+              function showRecords() {
+                document.getElementById('db-results').innerHTML = '';
+                db.transaction(function(tx) {
+                  tx.executeSql("SELECT * FROM Test", [], function(tx, result) {
+                    for (var i = 0, item = null; i < result.rows.length; i++) {
+                      item = result.rows.item(i);
+                      document.getElementById('db-results').innerHTML += 
+                          '<li><span contenteditable="true" onkeyup="webSqlSample.updateRecord('+item['id']+', this)">'+
+                          item['text'] + '</span> <a href="#" onclick="webSqlSample.deleteRecord('+item['id']+')">[Delete]</a></li>';
+                    }
+                  });
+                });
+              }
+ 
+              function createTable() {
+                db.transaction(function(tx) {
+                  tx.executeSql("CREATE TABLE Test (id REAL UNIQUE, text TEXT)", [],
+                      function(tx) {  log.innerHTML = '<p>"Test" table created!</p>' },
+                      onError);
+                });
+              }
+               function newRecord() {
+                var num = Math.round(Math.random() * 10000); // random data
+                db.transaction(function(tx) {
+                  tx.executeSql("INSERT INTO Test (id, text) VALUES (?, ?)", [num, document.querySelector('#todoitem').value],
+                      function(tx, result) {
+                        log.innerHTML = '';
+                        showRecords();
+                      }, 
+                      onError);
+                });
+              } 
+              function updateRecord(id, textEl) {
+                db.transaction(function(tx) {
+                  tx.executeSql("UPDATE Test SET text = ? WHERE id = ?", [textEl.innerHTML, id], null, onError);
+                });
+              } 
+              function deleteRecord(id) {
+                db.transaction(function(tx) {
+                  tx.executeSql("DELETE FROM Test WHERE id=?", [id],
+                      function(tx, result) { showRecords() }, 
+                      onError);
+                });
+              } 
+              function dropTable() {
+                db.transaction(function(tx) {
+                  tx.executeSql("DROP TABLE Test", [],
+                      function(tx) { 
+showRecords();
+log.innerHTML = '<p>Table deleted!</p>' }, 
+                      onError);
+                });
+              }              
+              return {
+                newRecord: newRecord,
+                createTable: createTable,
+                updateRecord: updateRecord,
+                deleteRecord: deleteRecord,
+                dropTable: dropTable
+              }
+            })();
+          </SCRIPT> 
+        </SECTION> 
+      </DIV> 
+</BODY>
+</HTML>

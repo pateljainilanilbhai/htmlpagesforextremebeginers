@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<HEAD>
+             <STYLE> 
+              #drag-zone {
+              list-style: none;
+              float: left; 
+            }
+            #drag-zone li * {
+              border: 4px solid #888;
+              display: block;
+            }
+            #drag-zone, #drop-zone, #drop-data { width: 30%; }
+            #drop-zone, #drop-data {
+              padding: 40px;
+              border: 5px solid #888;
+              float: right;
+              height: 200px;
+              overflow: auto;
+            }
+            #drop-zone.hovering {
+              border: 5px solid #aaa;
+              background-color: rgba(255, 0, 0, 0.199219);
+            }
+            #drop-data { 
+              background-color: #eee;
+              font-family: Monospace;
+              -ms-word-wrap: break-word;
+              word-wrap: break-word;
+            }
+            .datatypes {
+              font-weight: bold;
+            }
+            .draggable-text {
+              padding: 5px;
+            }
+
+
+          </STYLE> 
+</HEAD>
+<BODY>
+          <H1>Drag and Drop example</H1>
+          <SECTION id="dnd-section"> 
+            <OL id="drag-zone"> 
+              <LI><SPAN class="draggable-text" draggable>Select and drag and drop text 1</SPAN></LI> 
+<LI><SPAN class="draggable-text" draggable class="overwrite">Select and drag and drop text 2</SPAN></LI> 
+<LI><IMG src="images/bike3.jpg" draggable class="copy" /></LI>
+<LI><IMG src="images/bike4.jpg" draggable class="copy" /></LI> 
+            </OL>            
+           <DIV id="drop-data">Details of the dragged item</DIV> 
+            <DIV id="drop-zone">Drop Area</DIV> 
+            <SCRIPT defer> 
+            (function() {
+              var dragZone = document.querySelector('#drag-zone');
+              var dropZone = document.querySelector('#drop-zone');
+              dragZone.addEventListener('dragstart', function(event) {
+                if (event.target.className) { 
+                  event.dataTransfer.effectAllowed = event.target.className;
+                  event.target.style.border = "4px solid #cc3300";
+                }
+                else { 
+                  if (event.target.parentNode.className == 'overwrite') {
+                    event.dataTransfer.setData("text", "<strong>Overwritten Content</strong>");
+                  }
+                  event.target.parentNode.style.border = "4px solid #cc3300";
+                }
+                return true;
+              }, true);
+              dragZone.addEventListener('dragend', function(event) {
+                if (event.target.className) { 
+                  event.target.style.border = "4px solid #888";
+                }
+                else { 
+                  event.target.parentNode.style.border = "4px solid #888";
+                }
+                return true;
+              }, true);
+              dropZone.addEventListener('dragenter', function(event) {
+                if (event.preventDefault) event.preventDefault();
+                event.dataTransfer.dropEffect = 'copy';
+                this.className = 'hovering';
+                return false;
+              }, false);
+              dropZone.addEventListener('dragover', function(event) {
+                if (event.preventDefault) event.preventDefault(); 
+                event.dataTransfer.dropEffect = 'copy';
+                return false;
+              }, false);
+              dropZone.addEventListener('dragleave', function(event) {
+                if (event.preventDefault) event.preventDefault(); 
+                this.className = '';
+                return false;
+              }, false);
+              dropZone.addEventListener('drop', function(event) {
+                if (event.preventDefault) event.preventDefault();
+                var imgPassed = null;
+                var dropdata = document.querySelector('#drop-data');
+                var types = event.dataTransfer.types;
+                document.querySelector('#drop-data').textContent = '';
+                this.innerHTML = '';
+                for (var i = 0; i < types.length; i++) {
+                  if (types[i] == 'Files') {
+                    var files = event.dataTransfer.files;
+                    for (var j = 0; j < files.length; j++) {
+                      dropdata.textContent += 'File Name: '+files[j].fileName;
+                      dropdata.textContent += 'File Size: '+files[j].fileSize;
+                    }
+                  }
+                  else {
+                    if (typeof event.dataTransfer.getData(types[i]) !== 'undefined') {
+                      dropdata.innerHTML += '<p><em class="datatypes">'+types[i]+'</em>: <br />'+event.dataTransfer.getData(types[i]).replace(/</g, '&lt;') + '</p>';
+                    }
+                  }
+ 
+                  if (types[i] == 'text/uri-list') {
+                    imgPassed = event.dataTransfer.getData('text/uri-list');
+                  }
+                }
+                if (imgPassed) {
+                  var cEl = document.createElement('canvas');
+                  cEl.width = 200;
+                  cEl.height = 100;
+                  var ctx = cEl.getContext('2d');
+                  var img_buffer = document.createElement('img');
+                  img_buffer.src = imgPassed;
+                  img_buffer.style.display = 'none';
+                  document.body.appendChild(img_buffer); // this line only needed in safari
+                  img_buffer.onload = function() { ctx.drawImage(img_buffer,0,0,100,100); }
+                  this.appendChild(cEl);
+                } else {
+                  if (event.dataTransfer.getData('text')) {
+                    this.innerHTML = event.dataTransfer.getData('text');
+                  }
+                  else if (event.dataTransfer.getData('text/plain')) {
+                    this.innerHTML = event.dataTransfer.getData('text/plain');
+                  }
+                }
+                return false;
+              }, false);
+            })();
+            </SCRIPT> 
+          </SECTION> 
+        </DIV> 
+</BODY>
+</HTML>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+	<HEAD>
+		<TITLE> Animation </TITLE>
+		<STYLE type="text/css">
+			@-webkit-keyframes resize {
+				0% {
+					height:220px;
+					width:220px;
+					opacity:0.7;
+				}
+				50% {
+					height:240px;
+					width:240px;
+					opacity:0.4;
+				}
+			}
+	
+			#heart:hover {
+				-webkit-animation-name: resize;
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: 2;
+				-webkit-animation-direction: alternate;
+				-webkit-animation-timing-function: cubic-bezier(0,0.5,0,0);
+			}
+
+			#heartinf {
+				-webkit-animation-name: resize;
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-direction: alternate;
+				-webkit-animation-timing-function: cubic-bezier(0,0.5,0,0);
+				position: absolute;
+				left:250px;
+				top:80px;
+				width: 200px;
+				height:200px;
+
+			}
+
+			img{
+				height:200px;
+				width:200px;
+				opacity:1;
+			}
+
+		</STYLE>
+	</HEAD>
+
+	<BODY>
+		<H1>Working with Animation </H1>
+		<IMG id="heart" src="images/Heart.jpg" >
+		<IMG id="heartinf" src="images/Heart.jpg" >
+		<P style="position:absolute;left:60px;top:280px;text-align:center">Hover on this image <BR/> to animate.</P>
+<P style="position:absolute;left:300px;top:280px;text-align:center">Continoustly Animating <BR/>Image </P>
+	</BODY>
+</HTML>

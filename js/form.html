@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+    <style>
+		span{
+            font: bold 12px Arial, Helvetica, sans-serif;
+            color: #f00;
+            margin-left: 10px;
+}
+    select:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        select:valid
+        {
+            color: lightgreen;
+        }
+            textarea:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        textarea:valid
+        {
+            color: lightgreen;
+        }
+        .a:focus
+        {
+            width:25em;
+         }
+         .a
+         {
+            width:20em;
+         }
+          
+
+ 
+        input,select,textarea
+        {
+            border-color: green;
+            border-style: double;
+            border-width: 5px;
+            border-radius: 10%;
+            border-spacing: 10px;
+            size: 100px;
+            color: green;
+            background-color: lightyellow;
+            font-size:15pt;
+        }
+
+        td
+        {
+             color:black;
+             font-family: arial black;
+        }
+        input:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        input:valid
+        {
+            color: lightgreen;
+           
+
+        }
+        body
+        {
+                  
+                 background-repeat: no-repeat;
+                 background-position: center;
+                 background-attachment: cover;
+                 background-size: cover;                 
+                 padding: 15px;
+                 background-clip: padding-box;
+                 font-family:Arial;
+                 font-kerning: normal;
+                 font-size-adjust: 0.58;
+                 font-stretch: expanded;
+                 font-weight: normal;               
+                 word-spacing: 20px;
+                       
+        }
+        legend
+        {
+    margin-left:270px;
+    border-style: double;    
+    font-size: 14px;
+    line-height: 0px;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 0px;
+    border: 5px solid blue;
+    box-shadow: 5px 10px cyan;
+        }
+        fieldset
+        {
+                  
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-attachment: scroll;
+                  background-size: cover;
+                  background-blend-mode: color;
+                  border-width:  10px;
+                  border-color: green;
+                  width: 40%;margin:auto;
+        }
+
+    </style>
+	
+	<script type="text/javascript">
+
+	function ValidateForm()
+	{
+		
+		for(var i=0;i<50;i=i+2){
+	var d=document.getElementById('form1').childNodes[1].childNodes[3].childNodes[1].childNodes[i].childNodes[1].childNodes[0];
+		
+	console.log(d.value);
+		if(d.validity.valid==false)
+			{
+				showError(d,'PLEASE ENTER VALID DATA');
+			}
+		}
+		
+	}
+	
+	function showError(obj,message){
+            if(!obj.errorNode){
+                        obj.onchange=hideError;
+                        var span=document.createElement('span');
+                        span.className='error';
+                        span.appendChild(document.createTextNode(message));
+                        obj.parentNode.appendChild(span);
+                        obj.errorNode=span;
+            }
+            valid=false;
+            return
+}
+
+function hideError(){
+            this.parentNode.removeChild(this.errorNode);
+            this.errorNode=null;
+            this.onchange=null;
+}
+
+	
+           
+
+	window.onload = function() {
+	  	document.getElementById('submit').addEventListener('click', function(e){
+	    	ValidateForm();
+	  	});
+
+	  	
+		
+	}
+    
+
+	
+	
+	
+	
+</script>
+</head>
+<body>
+<form  method="post" target="_self" id="form1">
+ <fieldset>
+		<legend>New Attributes</legend>
+		<table>
+			<tr><td id="placeholder-test-wrap">
+			name with Placeholder,autofocus
+			</td><td><input placeholder="entername" name=placeholder-test type=text autofocus>
+			</td></tr>
+			<tr><td id="maxlength-textarea-test-wrap">
+			Maxlength (on textarea)
+			</td><td><textarea name="maxlenth-test" maxlength=10 rows="1"></textarea>
+			</td></tr>
+			<tr><td id="maxlength-input-test-wrap">
+			Maxlength (on input)
+			</td><td><input name="maxlenth-input-test" maxlength=10>
+			</td></tr>
+			<tr><td id="min-test-wrap">
+			Min
+			</td><td><input name="mintest" type="number" min=1>
+			</td></tr>
+			<tr><td id="max-test-wrap">
+			Max
+			</td><td><input name="maxtest" type="number" max=10>
+			</td></tr>
+			<tr><td id="step-test-wrap">
+			Step
+			</td><td><input name="steptest" type="number" step=5>
+			</td></tr>
+			<tr><td id="datalist-test-wrap">
+			List (Datalist)
+			</td><td><input name="datalist-test" type="text" list="planetdata">
+			<datalist id="planetdata">
+			<option value="Earth">
+			<option value="Venus">
+				<option value="Mars">
+			</datalist>
+			</td></tr>
+			<tr><td id="autocomplete-test-wrap">
+			Autocomplete
+			</td><td><input autocomplete name="autocomplete-test" type="text">
+			</td></tr>
+			<tr><td id="accepts-test-wrap">
+			<label>Accept (only images)</label>
+			</td><td><input type="file" accept="image/*">
+			</td></tr>
+			<tr><td id="multiple-test-wrap">
+			<label>Multiple Files</label>
+			</td><td><input type="file" multiple>
+			</td></tr>
+
+			<tr><td id="required-test-wrap">
+			Required test
+				</td><td><input required name="required-test" type="text">
+					</td></tr>
+
+			<tr><td id="pattern-test-wrap">
+			Pattern test 
+				</td><td><input required pattern="[0-9][A-Z]" name="placeholder-test" type="text">
+					</td></tr>
+									
+			<tr><td id="email-test-wrap">
+			Email
+				</td><td><input name="email-test" type="email">
+			</td></tr>
+
+			<tr><td id="tel-test-wrap">
+			Tel
+				</td><td><input name="tel-test" type="tel">
+				</td></tr>
+							<tr><td id="url-test-wrap">
+			Url
+				</td><td><input name="url-test" type="url">
+				</td></tr>
+			<tr><td id="datetime-test-wrap">
+			Date
+				</td><td><input name="datetime-test" type="date">
+			</td></tr>
+			<tr><td id="date-test-wrap">
+			Datetime
+				</td><td><input name="datetime-test" type="datetime">
+			</td></tr>
+			<tr><td id="datetime-local-test-wrap">
+			Datetime-local
+				</td><td><input name="datetime-local-test" type="datetime-local">
+			</td></tr>
+
+			<tr><td id="month-test-wrap">
+			Month
+				</td><td><input name="month-test" type="month">								
+			</td></tr>
+			<tr><td id="week-test-wrap">
+			Week
+				</td><td><input name="week-test" type="week">
+			</td></tr>
+			<tr><td id="time-test-wrap">
+			Time
+				</td><td><input name="time-test" type="time">
+			</td></tr>
+			<tr><td id="color-test-wrap">
+			Color
+				</td><td><input name="color-test" type="color">
+			</td></tr>
+			<tr><td id="number-test-wrap">
+			Number
+				</td><td><input name="number-test" type="number" min=0 max=100 step=5>
+			</td></tr>
+			<tr><td id="range-test-wrap">
+			Range
+				</td><td><input name="range-test" type="range" min=0 max=150 step=5>
+			</td></tr>
+				<tr><td>
+						</td><td><input name="submit" id="submit" type="submit" value="Submit">
+					</td></tr>
+					</table>
+			</fieldset>
+		</form>				
+		
+
+</body>
+</html>
+

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+    <style>
+    select:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        select:valid
+        {
+            color: lightgreen;
+        }
+            textarea:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        textarea:valid
+        {
+            color: lightgreen;
+        }
+        .a:focus
+        {
+            width:25em;
+         }
+         .a
+         {
+            width:20em;
+         }
+          
+
+ 
+        input,select,textarea
+        {
+            border-color: green;
+            border-style: double;
+            border-width: 5px;
+            border-radius: 10%;
+            border-spacing: 10px;
+            size: 100px;
+            color: green;
+            background-color: lightyellow;
+            font-size:15pt;
+        }
+
+        td
+        {
+             color:cyan;
+             font-family: arial black;
+        }
+        input:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        input:valid
+        {
+            color: lightgreen;
+           
+
+        }
+        body
+        {
+                 background-image:url(tex.jpg); 
+                 background-repeat: no-repeat;
+                 background-position: center;
+                 background-attachment: cover;
+                 background-size: cover;                 
+                 padding: 15px;
+                 background-clip: padding-box;
+                 font-family:Arial;
+                 font-kerning: normal;
+                 font-size-adjust: 0.58;
+                 font-stretch: expanded;
+                 font-weight: normal;               
+                 word-spacing: 20px;
+                       
+        }
+        legend
+        {
+    margin-left:270px;
+    border-style: double;    
+    font-size: 14px;
+    line-height: 0px;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 0px;
+    border: 5px solid blue;
+    box-shadow: 5px 10px cyan;
+        }
+        fieldset
+        {
+                  background-image: url(tex.jpg);
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-attachment: scroll;
+                  background-size: cover;
+                  background-blend-mode: color;
+                  border-width:  10px;
+                  border-color: green;
+                  width: 40%;margin:auto;
+        }
+
+    </style>
+</head>
+<body>
+<form  method="post" target="_self">
+					<fieldset>
+						<legend>New Attributes</legend>
+						<ul>
+							<li id="placeholder-test-wrap">
+							name with Placeholder,autofocus
+								<input placeholder="entername" name=placeholder-test type=text autofocus>
+							</li>
+
+							<li id="maxlength-textarea-test-wrap">
+							Maxlength (on textarea)
+								<textarea name=maxlenth-test maxlength=10 rows="1"></textarea>
+									</li>
+
+							<li id="maxlength-input-test-wrap">
+							Maxlength (on input)
+								<input name=maxlenth-input-test maxlength=10>
+									</li>
+
+							<li id="min-test-wrap">
+							Min
+								<input name=mintest type=number min=1>
+									</li>
+
+							<li id="max-test-wrap">
+							Max
+								<input name=maxtest type=number max=10>
+									</li>
+
+							<li id="step-test-wrap">
+							Step
+								<input name=steptest type=number step=5>
+									</li>
+
+							<li id="datalist-test-wrap">
+							List (Datalist)
+								<input name=datalist-test type=text list=planetdata>
+									<datalist id=planetdata>
+										<option value="Earth">
+										<option value="Venus">
+										<option value="Mars">
+									</datalist>
+									</li>
+
+
+							<li id="autocomplete-test-wrap">
+							Autocomplete
+								<input autocomplete name=autocomplete-test type=text>
+									</li>
+
+							<li id="accepts-test-wrap">
+								<label>Accept (only images)</label>
+									<input type=file accept="image/*">
+									</li>
+
+							<li id="multiple-test-wrap">
+								<label>Multiple Files</label>
+									<input type=file multiple>
+									</li>
+
+							<li id="required-test-wrap">
+							Required test
+								<input required name=required-test type=text>
+									</li>
+
+							<li id="pattern-test-wrap">
+							Pattern test 
+								<input required pattern="[0-9][A-Z]" name=placeholder-test type=text>
+									</li>
+									
+							<li id="email-test-wrap">
+							Email
+								<input name=email-test type=email>
+							</li>
+
+							<li id="tel-test-wrap">
+							Tel
+								<input name=tel-test type=tel>
+							<li id="url-test-wrap">
+							Url
+								<input name=url-test type=url>
+
+							<li id="datetime-test-wrap">
+							Date
+								<input name=datetime-test type=date>
+							</li>
+
+							<li id="date-test-wrap">
+							Datetime
+								<input name=datetime-test type=datetime>
+							</li>
+
+							<li id="datetime-local-test-wrap">
+							Datetime-local
+								<input name=datetime-local-test type=datetime-local>
+							</li>
+
+							<li id="month-test-wrap">
+							Month
+								<input name=month-test type=month>								
+							</li>
+
+							<li id="week-test-wrap">
+							Week
+								<input name=week-test type=week>
+
+							</li>
+
+							<li id="time-test-wrap">
+							Time
+								<input name=time-test type=time>
+							</li>
+
+							<li id="color-test-wrap">
+							Color
+								<input name=color-test type=color>
+							</li>
+
+							<li id="number-test-wrap">
+							Number
+								<input name=number-test type=number min=0 max=100 step=5>
+							</li>
+
+							<li id="range-test-wrap">
+							Range
+								<input name=range-test type=range min=0 max=150 step=5>
+							</li>
+
+							<li>
+								<input type=submit value=Submit>
+							</li>
+
+							</ul>
+
+					</fieldset>
+
+				</form>				
+				
+</body>
+</html>

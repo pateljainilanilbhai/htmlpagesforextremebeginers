@@ -1,0 +1,109 @@
+<!doctype html>
+<head>
+    <title>HTML5 Black Book</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <script src="js/libs/modernizr-1.6.min.js"></script>
+    <script>
+        function play(file) {
+            var pl = document.getElementById('audio');
+            pl.src = file;
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="extra_wrap">
+            <!-- header -->
+            <header> 
+		 <!-- .logo --> 
+        <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="HTML5 Black Book" title="HTML5 Black Book" /></a></div> 
+        <!-- /.logo --> 
+        <nav> 
+        <ul class="sf-menu"> 
+          <li><a href="index.html" class="current">Home</a></li> 
+<li><a href="#">HTML5 Features</a>
+<ul> 
+
+<li><a href="editablecontentarticle.html">Editable Content</a></li>
+<li><a href="spellcheckarticle.html">Spell Checking</a></li>
+<li><a href="datastoragearticle.html">Data Storage</a></li>
+<li><a href="dndarticle.html">Drag and Drop</a></li>
+<li><a href="notificationarticle.html">Desktop Notification</a></li>
+<li><a href="geolocationarticle.html">Geolocation</a></li>
+</ul>
+</li> 
+<li><a href="#">CSS3 Features</a>
+<ul> 
+
+<li><a href="opacityeffectsarticle.html">Opacity Effects</a></li>
+<li><a href="transformationeffectsarticle.html">Transformation Effects</a></li>
+<li><a href="transitioneffectsarticle.html">Transition Effects</a></li>
+<li><a href="animationeffectsarticle.html">Animation Effects</a></li>
+
+</ul>
+</li>
+
+<li><a href="#">Entertainment Services</a> 
+<ul>
+          <li><a href="songs.html">Songs</a></li> 
+<li><a href="videos.html">Videos</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</li>
+<li><a href="feedback.html">Feedback</a></li>
+
+<li><a href="about.html">About Us</a></li>          
+        
+        </ul> 
+      </nav> 
+    </header> 
+            <!-- EOF header -->
+            <h1>
+                Playing Videos</h1>
+	<TABLE style="background:blue;width:800px">
+	<TR>
+	<TD>
+                <div>
+                    <video id="audio" autoplay="true" controls height="400px" width="500px">
+                        Your browser does not support the VIDEO element.
+                    </video>
+                </div>
+	</TD>
+	<TD>
+
+            <div id="vlist">
+                <div style="display: block; float: left; position: relative; margin-left: 15.0px;
+                    margin-right: 15.0px;">
+                    <a href="#" onclick="play('video/Wildlife.ogv')">
+                        <img src="images/video.png" alt="Video 1" title="video 1" /></a><br /><br />
+
+                </div>
+
+                <div style="display: block; float: left; position: relative; margin-left: 15.0px;
+                    margin-right: 15.0px;">
+                    <a href="#" onclick="play('video/Wildlife.ogv')">
+                        <img src="images/video.png" alt="Video 2" title="video 2" /></a><br /><br />
+
+                </div>
+
+                <div style="display: block; float: left; position: relative; margin-left: 15.0px;
+                    margin-right: 15.0px;">
+                    <a href="#" onclick="play('video/Wildlife.ogv')">
+                        <img src="images/video.png" alt="Video 3" title="video 3" /></a><br /><br />
+                </div>
+                
+
+            </div>
+	</TD>
+	</TR>
+</table>
+<footer> 
+		<div class="copy">&copy; Copyright 2011, Kogent Learning Solutions Inc.</div> 
+       
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>  
+ 
+<head> 
+  
+ 
+  <title>HTML5 Black Book</title> 
+  
+  <link rel="stylesheet" href="css/style.css"> 
+  
+  <script src="js/libs/modernizr-1.6.min.js"></script> 
+ 
+</head> 
+ 
+<body> 
+<div id="container"> 
+  	<div class="extra_wrap"> 
+  	 <!-- header --> 
+   <header> 
+		 <!-- .logo --> 
+        <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="HTML5 Black Book" title="HTML5 Black Book" /></a></div> 
+        <!-- /.logo --> 
+        <nav> 
+        <ul class="sf-menu"> 
+          <li><a href="index.html" class="current">Home</a></li> 
+<li><a href="#">HTML5 Features</a>
+<ul> 
+
+<li><a href="editablecontentarticle.html">Editable Content</a></li>
+<li><a href="spellcheckarticle.html">Spell Checking</a></li>
+<li><a href="datastoragearticle.html">Data Storage</a></li>
+<li><a href="dndarticle.html">Drag and Drop</a></li>
+<li><a href="notificationarticle.html">Desktop Notification</a></li>
+<li><a href="geolocationarticle.html">Geolocation</a></li>
+</ul>
+</li> 
+<li><a href="#">CSS3 Features</a>
+<ul> 
+
+<li><a href="opacityeffectsarticle.html">Opacity Effects</a></li>
+<li><a href="transformationeffectsarticle.html">Transformation Effects</a></li>
+<li><a href="transitioneffectsarticle.html">Transition Effects</a></li>
+<li><a href="animationeffectsarticle.html">Animation Effects</a></li>
+
+</ul>
+</li>
+
+<li><a href="#">Entertainment Services</a> 
+<ul>
+          <li><a href="songs.html">Songs</a></li> 
+<li><a href="videos.html">Videos</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</li>
+<li><a href="feedback.html">Feedback</a></li>
+
+<li><a href="about.html">About Us</a></li>          
+        
+        </ul> 
+      </nav> 
+    </header>  
+     <!-- EOF header --> 
+    <div id="main"> 
+
+<H1>Transformation Effects </H1> 
+
+<P>Transformation is a process of changing the position, size, or style of an object. CSS provides the transform property to apply the transformation effect on the HTML elements. The possible values of the transform property are listed as follows:
+</p>
+<p>
+<ul>
+<li>transform: Specifies the transform function to apply it on an element. The possible values of this property are matrix, rotate, scale, scaleX, scaleY, skew, skewX, skewY, translate, translateX, and translateY.</li>
+<li>transform-origin: Specifies the origin of the transformation for an element. The possible values of this property are left, right, center, bottom, top, and 50% 50%.</li>
+<li>transform-style: Specifies whether the transformation apply in 2D or 3D on an element. The possible values of this property are flat and perspective-3D.</li>
+<li>perspective: Shows an element from different angles and perspectives.</li> 
+<li>perspective-origin: Specifies the origin of the perspective for an element. The possible values of this property are left, right, center, bottom, top, <percentage>, and 50% 50%.</li>
+<li>backface-visibility: Specifies whether or not the back side of an element is visible. The possible values of this property are visible and hidden.</li>
+</ul>
+</p>
+<p>
+The following code snippet shows an example of using the transformation properties:
+</p>
+<p>
+p {
+    -webkit-transform: rotate(45deg);
+	-webkit-perspective: 1200px;
+	-webkit-perspective-origin: right;
+}
+</p>
+<p>
+In the preceding code snippet, we have defined the transform property to rotate the paragraph element. The perspective property has been set to 1200px and the perspective-origin property to right, which enable you to view the element at 1200 points from its right side.
+</p>
+
+<p>
+Click here for demos to see transformation effects:
+<br/>
+<a href="transformation.html">demo</a>
+
+</p>
+</div>
+<footer> 
+		<div class="copy">&copy; Copyright 2011, Kogent Learning Solutions Inc.</div> 
+       
+    </footer>
+</div>
+</div>
+</div>
+</body>
+</html>

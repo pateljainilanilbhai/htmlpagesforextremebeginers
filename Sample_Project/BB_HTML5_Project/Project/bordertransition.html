@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+	<HEAD>
+		<TITLE>Transition </TITLE>
+		<STYLE type="text/css">
+			div{
+				background:#444;
+			}
+
+			.area {
+				border-bottom: 6px solid #dbdfcd;
+				height: 500px;
+				position: relative;
+			}
+
+			.item {
+				width: 240px;
+				height:200px;
+				opacity:0.9;
+				border-radius:5px 5px 5px 5px;
+			}
+
+			.area .item {
+				-webkit-transition: all 0.5s linear;
+			}
+
+			.item:hover,
+			.item:focus {
+				-webkit-border-radius:500px;
+
+			}	
+		</STYLE>
+	</HEAD>
+
+	<BODY>
+	
+		<DIV class="area">
+			<H1>Working with Transition </H1>
+			<IMG class="item item-1" src="images/image1.jpg">
+			<IMG class="item item-2"  src="images/image2.jpg"><BR/>
+			<IMG class="item item-3" src="images/image3.jpg">
+			<IMG class="item item-4" src="images/image4.jpg">
+		</DIV>
+	</BODY>
+</HTML>

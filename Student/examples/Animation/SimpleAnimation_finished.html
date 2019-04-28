@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Canvas Test With No Buffering</title>
+		<script type="text/javascript">
+			var rectY=200, rectW=40;
+			var rectX = -rectW;
+			var canvas = null;
+			var context = null;
+			function init() {
+				canvas = document.getElementById('testCanvas');
+				context = canvas.getContext("2d");
+				
+				blank();
+
+				context.fillStyle= "yellow";
+				context.fillRect(rectX,rectY,rectW,rectW);
+				setInterval(anim, 30);
+			}
+			
+			function blank() {
+				context.fillStyle = "#00ddee";
+				context.fillRect(0,0,context.canvas.width, context.canvas.height);
+			}
+
+			function anim() {
+				if (rectX < context.canvas.width) {
+					blank();
+					rectX += 5;
+					context.fillStyle = "yellow";
+					context.strokeStyle = "red";
+					context.lineWidth = 3;
+					context.fillRect(rectX,rectY,rectW,rectW);
+					context.strokeRect(rectX,rectY,rectW,rectW);
+				}
+				else rectX=-rectW;
+			}			
+		</script>
+	</head>
+	<body onload="init()">
+		<canvas id="testCanvas" width="400" height="400">
+			Canvas not supported
+		</canvas>
+	</body>
+</html>

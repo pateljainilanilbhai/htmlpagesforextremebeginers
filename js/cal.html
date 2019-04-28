@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	
+</head>
+
+<body>
+<form name="f" id="f">
+<input type="text" name="t" readonly><br/>
+<table>
+<tr>
+<td><input type="button" name="CE" value="CE" onClick="f.t.value ''"></td>
+	<td><input type="button" name="^" value=" ^ " onClick="a(' ^ ')"></td>
+	<td><input type="button" name="&#x232B" value="&#x232B" onClick="d()"></td>
+	<td><input type="button" name=" / "  value=" / " onclick="a(' / ')"></td>
+</tr>	
+	
+	<tr>
+<td><input type="button" name="7" value="7" onClick="a(7)"></td>
+	<td><input type="button" name="8" value="8" onClick="a(8)"></td>
+	<td><input type="button" name="9" value="9" onClick="a(9)"></td>
+	<td><input type="button" name=" * "  value=" * " onclick="a(' * ')"></td>
+</tr>	
+	
+	
+	
+	<tr>
+<td><input type="button" name="4" value="4" onClick="a(4)"></td>
+	<td><input type="button" name="5" value="5" onClick="a(5)"></td>
+	<td><input type="button" name="6" value="6" onClick="a(6)"></td>
+	<td><input type="button" name=" - "  value=" - " onclick="a(' - ')"></td>
+</tr>	
+	
+	<tr>
+<td><input type="button" name="1" value="1" onClick="a(1)"></td>
+	<td><input type="button" name="2" value="2" onClick="a(2)"></td>
+	<td><input type="button" name="3" value="3" onClick="a(3)"></td>
+	<td><input type="button" name=" + "  value=" + " onclick="a(' + ')"></td>
+</tr>	
+	
+		<tr>
+<td><input type="button" name="%" value="%" onClick="f.t.value+='%'"></td>
+	<td><input type="button" name="0" value="0" onClick="a(0)"></td>
+	<td><input type="button" name="." value="." onClick="a(.)"></td>
+	<td><input type="button" name=" = "  value=" = " onclick="f.t.value=eval(f.t.value)"></td>
+</tr>	
+	
+	
+</table>
+	
+	
+</form>
+	
+	
+</body>
+	<script>
+		function a(v)
+		{
+			f.t.value+=v;
+		}
+		function d()
+		{
+		f.t.value=f.t.value.substring(0,f.t.value.length-1);
+		}
+	</script>
+</html>

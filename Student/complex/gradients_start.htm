@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Drawing Gradients</title>
+		<style type="text/css">
+			#Canvas1 {
+				border: dotted 1px black;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var theCanvas = document.getElementById('Canvas1');
+				if (theCanvas && theCanvas.getContext) {
+					var ctx = theCanvas.getContext("2d");
+					if (ctx) {
+						ctx.beginPath();
+						ctx.arc(520,150,80,0,2.5*Math.PI);
+						ctx.stroke();
+						
+						var gradient=ctx.createRadialGradient(520,150,0,520,150,80);
+						
+						gradient.addColorStop(0,"violet");						
+						gradient.addColorStop(1/6,"indigo");						
+						gradient.addColorStop(2/6,"blue");						
+						gradient.addColorStop(3/6,"green");						
+						gradient.addColorStop(4/6,"yellow");						
+						gradient.addColorStop(5/6,"black");						
+						gradient.addColorStop(1,"red");
+						
+						ctx.fillStyle=gradient;
+						ctx.fill();							
+						}
+						
+
+					}
+				}
+
+
+				
+				
+				
+			
+		</script>
+	</head>
+	<body>
+		<h1>Drawing Gradients</h1>
+		<p>The HTML5 Canvas supports two kinds of gradients - linear and radial.</p>
+		<canvas id="Canvas1" width="700" height="300">Your browser does not support canvas.</canvas>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Drawing Shadows</title>
+		<style type="text/css">
+			#Canvas1 {
+				border: dotted 1px black;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var theCanvas = document.getElementById('Canvas1');
+				if (theCanvas && theCanvas.getContext) {
+					var ctx = theCanvas.getContext("2d");
+					if (ctx) {
+
+						ctx.fillStyle="#0b36e2";
+						ctx.shadowColor="black";
+						ctx.shadowBlur=15	;
+						ctx.shadowOffsetX=15;
+						ctx.shadowOffsetY=15;	
+						ctx.fillRect(10,10,200,100);	
+						ctx.fill();
+					}
+				}
+
+				var theCanvas2 = document.getElementById('Canvas1');
+				if (theCanvas2 && theCanvas2.getContext) {
+					var ctx2 = theCanvas2.getContext("2d");
+					if (ctx2) {
+
+						ctx2.beginPath();
+						ctx2.shadowColor="black";
+						ctx2.shadowBlur=12;
+						ctx2.shadowOffsetX=5;
+						ctx.shadowOffsetY=5;	
+						ctx2.fillStyle="#08af3d";
+						ctx2.font="35px Times New Roman";
+						ctx2.fillText("Drawing Text On Canvas",300,75);
+						ctx2.stroke();
+					}
+				}
+
+				var theCanvas1 = document.getElementById('Canvas1');
+				if (theCanvas1 && theCanvas1.getContext) {
+					var ctx1 = theCanvas1.getContext("2d");
+					if (ctx1) {
+
+						ctx1.beginPath();
+						ctx1.shadowColor="violet";
+						ctx1.shadowBlur=15;
+						ctx1.shadowOffsetX=-10;
+						ctx1.shadowOffsetY=-10;	
+						ctx1.lineWidth=20;
+						ctx1.moveTo(40,180);						
+						ctx1.lineTo(475,180);
+						ctx1.lineCap="round";
+						ctx1.strokeStyle="red";
+						ctx1.stroke();											
+
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Drawing Shadows</h1>
+		<p>All drawing operations can produce shadows. This example shows how to make shadows on a variety of canvas operations.</p>
+		<canvas id="Canvas1" width="700" height="300">Your browser does not support canvas.</canvas>
+	</body>
+</html>

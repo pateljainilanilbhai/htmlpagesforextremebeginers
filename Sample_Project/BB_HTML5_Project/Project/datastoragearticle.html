@@ -1,0 +1,141 @@
+<!doctype html>  
+ 
+<head> 
+  
+ 
+  <title>HTML5 Black Book</title> 
+  
+  <link rel="stylesheet" href="css/style.css"> 
+  <script src="js/libs/modernizr-1.6.min.js"></script> 
+ 
+</head> 
+ 
+<body> 
+<div id="container"> 
+  	<div class="extra_wrap"> 
+  	 <!-- header --> 
+    <header> 
+		 <!-- .logo --> 
+        <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="HTML5 Black Book" title="HTML5 Black Book" /></a></div> 
+        <!-- /.logo --> 
+        <nav> 
+        <ul class="sf-menu"> 
+          <li><a href="index.html" class="current">Home</a></li> 
+<li><a href="#">HTML5 Features</a>
+<ul> 
+
+<li><a href="editablecontentarticle.html">Editable Content</a></li>
+<li><a href="spellcheckarticle.html">Spell Checking</a></li>
+<li><a href="datastoragearticle.html">Data Storage</a></li>
+<li><a href="dndarticle.html">Drag and Drop</a></li>
+<li><a href="notificationarticle.html">Desktop Notification</a></li>
+<li><a href="geolocationarticle.html">Geolocation</a></li>
+</ul>
+</li> 
+<li><a href="#">CSS3 Features</a>
+<ul> 
+
+<li><a href="opacityeffectsarticle.html">Opacity Effects</a></li>
+<li><a href="transformationeffectsarticle.html">Transformation Effects</a></li>
+<li><a href="transitioneffectsarticle.html">Transition Effects</a></li>
+<li><a href="animationeffectsarticle.html">Animation Effects</a></li>
+
+</ul>
+</li>
+
+<li><a href="#">Entertainment Services</a> 
+<ul>
+          <li><a href="songs.html">Songs</a></li> 
+<li><a href="videos.html">Videos</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</li>
+<li><a href="feedback.html">Feedback</a></li>
+
+<li><a href="about.html">About Us</a></li>          
+        
+        </ul> 
+      </nav> 
+    </header>  
+     <!-- EOF header --> 
+    <div id="main"> 
+
+<H1>Data Storing</H1> 
+
+<P>
+Sometimes, you need to store data accessed from the Internet to your local system. The most common method to store data locally in all browsers is cookies, which are key-value pairs of strings that are stored locally in a text file. These text files are sent to the server, having the same domain name, with respect to every Hyper Text Transfer Protocol (HTTP) request. HTML5 provides a new feature that supports the client-side storage, which is further divided into the following types of storage:
+</p>
+<p>
+<ul>
+<li>Session storage</li>
+<li>Local storage</li>
+<li>Database storage</li>
+</ul>
+</p>
+<hr/>
+<h2>Session Storage</h2>
+<p>Session storage is a storage that acts as cookies but has more storage capacity. A cookie has the capacity to store a maximum of 4 kilo bytes (KB) data; however, a session storage has the capacity to store data in mega bytes (MB). To understand the importance of session storage, let’s consider a scenario. Suppose you have bought two plane tickets from the same site using two different windows at the same time. If the Web application uses cookies to keep track of ticket details, the purchase done in one window can be leaked in the other window. However, in the session storage, such type of leakage does not occur as the data does not remain in the persistent state, and disappears as you close the window. An example of session storage is given in the following code snippet:
+</p>
+<p>
+sessionStorage.setItem('fullname', 'Charu Verma');                  
+alert("Your name is: " + sessionStorage.getItem('fullname'));       
+alert("Hello " + sessionStorage.fullname);                        
+sessionStorage.removeItem('fullname');
+</p>
+<p>    
+In the preceding code snippet, a session variable is defined, accessed, and removed.
+</p>
+<p>
+Click here for demos to see how to implement session storage:
+<br/>
+<a href="sessionstorage.html">demo</a>
+</p>
+<hr/>
+<h2>Local Storage</h2>
+<p>
+Local storage is same as the session storage, except the feature of persistency. In other words, a localStorage object can be assumed as a persistent version of a sessionStorage object. The session storage stores the data till the duration of a browser tab session, while the local storage stores the saved data on a user's computer even after closing the browser window. An example of the local storage is given in the following code snippet:
+</p>
+<p>
+localStorage.setItem('fullname', 'Charu Verma');               
+alert("Your name is: " + localStorage.getItem('fullname'));  
+alert("Hello " + localStorage.fullname);                     
+localStorage.removeItem('fullname'); 
+</p>
+<p>  
+In the preceding code snippet, the localStorage object is defined, accessed, and removed. 
+The combination of session storage and local storage is called as Web storage or Document Object Model (DOM) storage. A DOM storage object can use the length property to return the number of items in the DOM Storage area.
+</p>
+<p>
+Click here for demos to see how to implement local storage:
+<br/>
+<a href="localstorage.html">demo</a>
+</p>
+<hr/>
+<h2>Database Storage</h2>
+<p>HTML5 also provides database storage to store data on a client's machine using a Structured Query language (SQL) database. It uses a temporary database to store data for a specified period of time. The following code snippet shows how to make a connection with a database:
+</p>
+<p>
+db = openDatabase("DBTest", "1.0", "HTML5 Database API example", 200000);
+</p>
+<p>
+The preceding code snippet creates a database object, db, with the title DBTest, a version number of 1.0, along with a description and approximate size.
+</p>
+<p>
+After creating a database connection, two basic functions transaction() and executeSql() are used to execute a SQL query. The transaction() function takes a single argument, executeSql() function, which actually executes the query. The executeSql() function takes four arguments, a string query, an array of strings to insert the values for place holders in string query, a function on successful execution of the query, and a function on failure of the query.
+</p>
+<p>
+Click here for demos to see how to implement database storage:
+<br/>
+<a href="databasestorage.html">demo</a>
+</p>
+</div>
+<footer> 
+		<div class="copy">&copy; Copyright 2011, Kogent Learning Solutions Inc.</div> 
+       
+    </footer>
+</div>
+</div>
+</div>
+</body>
+</html>

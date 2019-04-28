@@ -1,0 +1,47 @@
+body {margin:0;}
+
+nav {
+  overflow: hidden;
+  background:url("../images/img_bg_1.jpg");
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav>a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+main {
+  background: url("./../../prac3/Images/intro-bg.jpg") no-repeat;
+  background-size: cover; 
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable 
+ scrolling */
+}
+ span {
+      width: 175px;
+      display:block;
+      float:left;
+    }
+    input {
+      float:left;
+    }
+    p {
+      padding-top:10px;
+      clear: all;
+    }
+    h2 {
+      padding-top:20px;
+      clear: all;
+    }
+    label {
+      padding-right:20px;
+    }
+

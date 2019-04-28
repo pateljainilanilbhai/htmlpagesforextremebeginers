@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>overlay divs</title>
+	<style type="text/css">
+		select:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        select:valid
+        {
+            color: lightgreen;
+        }
+            textarea:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        textarea:valid
+        {
+            color: lightgreen;
+        }
+        .a:focus
+        {
+            width:25em;
+         }
+         .a
+         {
+            width:20em;
+         }
+         #d
+		{
+			z-index: -1000;
+			opacity: 0.8;
+			margin: auto;
+			display: none;
+		}
+          
+
+ 
+        input,select,textarea
+        {
+            border-color: green;
+            border-style: double;
+            border-width: 5px;
+            border-radius: 10%;
+            border-spacing: 10px;
+            size: 100px;
+            color: green;
+            background-color: lightyellow;
+            font-size:15pt;
+        }
+
+        td
+        {
+             color:cyan;
+             font-family: arial black;
+        }
+        input:invalid
+        {
+            color: red;
+            border-radius: 10%;
+        }
+        input:valid
+        {
+            color: lightgreen;
+           
+
+        }
+        body
+        {
+                               
+                 padding: 15px;
+                 background-clip: padding-box;
+                 font-family:Arial;
+                 font-kerning: normal;
+                 font-size-adjust: 0.58;
+                 font-stretch: expanded;
+                 font-weight: normal;               
+                 word-spacing: 20px;
+                       
+        }
+        </style>
+</head>
+<body>
+	<div style="background-color: gray;opacity: 0.5; display: block;position: absolute;top: 18%;left: 50%;" id="click">
+				<button name="y" style="text-shadow: 5px 5px 10px blue;" onclick="show()">click to login</button>
+		</div>
+	<div>
+		<div style="background-color: gray;opacity: 0.5; width: 500px;height: 50%; border-radius: 10px;border:5px blue solid;display: block;position: absolute;top: 25%;left: 40%;" id="c">
+			<button name="x"  style="float: right;" onclick="on()">x</button>
+			<form>
+				<table cellpadding="50">
+					<tr><td>
+				<label>user name</label></td>
+				<td><input type="text" name="user" placeholder="email id" required></td>
+			</tr>
+			<tr><td>
+				<label>password</label></td>
+				<td><input type="password" name="" placeholder="enter password" maxlength="20" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required ></td>
+				</tr>
+				<tr><td colspan="2"><center><button  onclick="login()">login</button></center></td></tr>
+				
+				</table>
+			</form>
+		</div>
+</div>
+
+<div style="display: none;" id="l">
+<h1 style="color: red;text-shadow: 5px 5px 10px blue"><center>YOU ARE SUCCESSFULLY LOGED IN</center></h1>
+<center><button class="a" onmouseover="onn()">HOVER HERE</button></center>
+<center>
+<div id="d" >
+	<center><img src="back.jpeg" height="50%" width="50%"></center>
+</div></center>
+</div>
+
+
+
+
+<script type="text/javascript">
+	function on(){
+		var a=document.getElementById("c").style.display;
+		
+		if(a=="none"||a=="")
+		{
+			document.getElementById("c").style.display="block";
+			
+		}
+		else
+		{
+			document.getElementById("c").style.display="none";
+			
+		}
+	}
+
+
+			function show(){
+		var a=document.getElementById("c").style.display;
+		
+		if(a=="none"||a=="")
+		{
+			document.getElementById("c").style.display="block";
+			
+		}
+	}
+	function onn(){
+		var a=document.getElementById("d").style.display;
+		
+		if(a=="none"||a=="")
+		{
+			document.getElementById("d").style.display="block";
+		}
+		else
+		{
+			document.getElementById("d").style.display="none";
+		}
+	}
+
+	function login(){		
+			document.getElementById("c").style.display="none";		
+			document.getElementById("click").style.display="none";
+			document.getElementById("l").style.display="block";
+			document.getElementById("d").style.display="block";			
+	}	
+</script>
+</body>
+</html>

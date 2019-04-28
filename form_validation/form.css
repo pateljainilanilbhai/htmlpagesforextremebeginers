@@ -1,0 +1,35 @@
+body {
+	text-align: center;
+	background-image:url(game.jpg);
+	background-size: 100%;
+	color:white;
+}
+legend {
+	text-align: center;
+	font-size: 30px;
+	color: cyan;
+	text-shadow: 5px
+}
+#fieldSignUp {
+	width: 50%;
+	border-radius: 60px; 
+	border-width: 5px;
+}
+
+#Birthday_Day {
+	width: 40px;
+	text-align: center;
+}
+
+#Birthday_Year {
+	width: 60px;
+	text-align: center;
+}
+
+#Birthday_Month {
+	text-align: center;
+}
+
+abbr {
+	color: orangered;
+}

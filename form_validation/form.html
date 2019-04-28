@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<title>Login Form HTML 5</title>
+<link href="form.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form name="signUp" class="left" 
+	  action="file:///A:/Study/Study/4th%20Sem/WT/practical/part2/tennis/game.html" enctype="multipart/form-data" method="post" target="new"
+	  onSubmit ="return validateForm();" >
+  <div align="center">
+    <fieldset id="fieldSignUp">
+      <legend align="center">Create a New Account</legend>
+      <table align="center" cellpadding = "6">
+        <tr>
+          <td>FIRST NAME<sup><abbr title="This filed is required">*</abbr></sup></td>
+          <td><input type="text" name="First_Name" minlength="2" maxlength="15" required pattern="[A-z][a-z]+" title="First letter must be capital" /></td>
+        </tr>
+        <tr>
+          <td>LAST NAME<sup><abbr title="This filed is required">*</abbr></sup></td>
+          <td><input type="text" name="Last_Name" minlength="2" maxlength="15" required pattern="[A-z][a-z]+" title="First letter must be capital" /></td>
+        </tr>
+        <tr>
+          <td>DATE OF BIRTH<sup><abbr title="This filed is required">*</abbr></sup></td>
+          <td><input required type="number" step="1" min="1" max="31" name="Birthday_day" id="Birthday_Day">
+		<select id="Birthday_Month" required name="Birthday_Month">
+		  <option value="-1">Month:</option>
+		  <option value="January">Jan</option>
+		  <option value="February">Feb</option>
+		  <option value="March">Mar</option>
+		  <option value="April">Apr</option>
+		  <option value="May">May</option>
+		  <option value="June">Jun</option>
+		  <option value="July">Jul</option>
+		  <option value="August">Aug</option>
+		  <option value="September">Sep</option>
+		  <option value="October">Oct</option>
+		  <option value="November">Nov</option>
+		  <option value="December">Dec</option>
+		</select>
+		<input type="number" step="1" min="1920" max="2020" name="Birthday_Year" id="Birthday_Year">
+		</td>
+		</tr>
+		<tr>
+          <td>EMAIL ID<sup><abbr title="This filed is required">*</abbr></sup></td>
+          <td><input type="email" title="example@gmail.com" name="mail" required maxlength="50" pattern="[a-z0-9_]*@[a-z.]*" id="mail" /></td>
+        </tr>
+        
+		<tr>
+          <td>Password<sup><abbr title="This fi0led is required">*</abbr></sup></td>
+          <td><input type="Password" title="Your password is protected" id="password1" name="password1" required maxlength="30"></td>
+		  <td>Conform<sup><abbr title="This filed is required">*</abbr></sup></td>
+		  <td><input type="Password" title="Your password is protected" id="password2" name="password2" required maxlength="30" onBlur="passwordValidate()"></td>
+	    </tr>
+		  
+        <tr>
+          <td>Mobile Number</td>
+          <td><input type="text" title="+91-922-887-9077" name="Mobile_Number" minlength="10" maxlength="13" /></td>
+          <td colspan="3"><input type="checkbox" name="doNotCall" title="Don't want to mention Mobile_Number" onClick="enableDisableCall(this);">&nbsp;Please don't call me.</td>
+		</tr>
+        <tr>
+          <td>Genderf</td>
+          <td><input type="radio" name="Gender" value="Male" /> Male
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="Gender" value="Female" /> Female </td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td><input type="text" name="Country" value="India" readonly/></td>
+        </tr>
+        <tr>
+          <td>Photo</td>
+          &nbsp;&nbsp;&nbsp;
+          <td><input type="file" accept="image/*"></td>
+        </tr>
+		<td colspan="2" align="center"> <input type="submit" value="Submit"> <input type="reset" value="Reset"></td>
+      </table>
+    </fieldset>
+  </div>
+</form>
+<h4>Already having an account?</h4>
+<form class="left" 
+	  action="file:///A:/Study/Study/4th%20Sem/WT/practical/part2/tennis/game.html" enctype="multipart/form-data" method="post" target="new">
+  <div align="center">
+    <fieldset onfocus="center" style="align-content: center; width: 100px; border-radius: 60px; border-width: 5px">
+      <legend align="center">Login</legend>
+      <table align="center" cellpadding = "5">
+        <tr>
+          <td>Gmail</td>
+          <td><input type="gmail" name="gmail" maxlength="50"/></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="Password" name="center" maxlength="30"/></td>
+        </tr>
+		<tr>
+          <td colspan="2" align="center"><input type="submit" value="Submit">
+          <input type="reset" value="Reset"></td>
+        </tr>    
+	</table>
+    </fieldset>
+  </div>
+</form>
+	<script src="form.js"></script>
+	<noscript>sorry</noscript>
+</body>
+</html>

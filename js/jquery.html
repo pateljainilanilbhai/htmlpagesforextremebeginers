@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script src="jqueryfull.js"></script>
+	<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideDown("slow");
+    });
+	  $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+	 $("#button3").click(function(){
+        $("#div1").fadeToggle(1000);
+        $("#div2").fadeToggle(2000);
+        $("#div3").fadeToggle(3000);
+    });
+	$("#button4").click(function(){
+        $("#p4").toggle();
+    });
+	$("#start").click(function(){
+        $("#div").animate({left: '100px'}, 5000);
+        $("#div").animate({fontSize: '3em'}, 5000);
+		document.getElementById("element").style.animation="running";
+    });
+  
+    $("#stop").click(function(){
+        $("#div").stop();
+		document.getElementById("element").style.animation="paused";
+    });
+
+    $("#stop2").click(function(){
+        $("#div").stop(true);
+    });
+
+    $("#stop3").click(function(){
+        $("#div").stop(true, true);
+    }); 
+});
+</script>
+</head>
+	<style>#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+	
+
+.element {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  background-color: red;
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  margin: auto;
+  margin-top: 200px;
+  background-image: url(Square.png);
+  background-blend-mode: exclusion;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: yellow;
+  }
+  0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+	</style>
+
+<body>
+Implement following tasks using jQuery:
+ Sliding page elements
+ Hiding and Showing elements
+ Fading elements
+ Toggling elements
+ Stopping effects
+	
+	 
+<div id="flip">CLICK TO REVEAL RESULT</div>
+<div id="panel">YOU ARE PASSED</div>
+
+<p>BE CALM</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+	
+<button id="button3">Click to fade in/out boxes</button><br><br>
+
+<div id="div1" style="width:80px;height:80px;background-color:red;float: left"></div>
+<div id="div2" style="width:80px;height:80px;background-color:green;float: left"></div>
+<div id="div3" style="width:80px;height:80px;background-color:blue;float: left"></div>
+
+	<button id="button4">Toggle the paragraphs</button>
+
+<p id="p4">LIGHT ON AND OFF.</p>
+	
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<button id="stop2">Stop all</button>
+<button id="stop3">Stop but finish</button>
+
+
+
+<div style="background:#98bf21;height:100px;width:200px;position:absolute;" id="div">HELLO</div>
+<div class="element" id="element"></div>
+	
+</body>
+</html>

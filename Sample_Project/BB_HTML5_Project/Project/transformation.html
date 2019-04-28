@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+	<HEAD>
+		<TITLE> Rotating Images </TITLE>
+		<STYLE type="text/css">
+			img {
+				width: 300px;
+				height: 200px;
+			}
+
+			#transform {
+				position: relative;
+				margin: 10px auto;
+				width: 300px;
+				height: 200px;
+				-webkit-transform-style: preserve-3d;
+				-webkit-transition: all 1.0s linear;
+			}
+
+			#transform:hover {
+				-webkit-transform: rotateZ(35deg);
+				-webkit-box-shadow: -5px 5px 5px #aaa;
+			}
+
+		</STYLE>
+	</HEAD>
+
+	<BODY>
+		<H1>Working with Transformation </H1>
+		<DIV id="transform">
+			<IMG src="images/image1.jpg"/>
+		</DIV>
+
+		<DIV id="transform">
+			<IMG src="images/image2.jpg"/>
+		</DIV>
+
+		<DIV id="transform">
+			<IMG src="images/image3.jpg"/>
+		</DIV>
+	</BODY>
+</HTML>

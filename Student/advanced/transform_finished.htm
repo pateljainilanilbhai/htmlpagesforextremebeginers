@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Custom Transform</title>
+		<style type="text/css">
+			canvas {
+				border: dotted 1px black;
+				margin: 25px;
+			}
+		</style>
+		<script type="text/javascript">
+		    window.onload = function () {
+		        var theCanvas = document.getElementById('Canvas1');
+		        if (theCanvas && theCanvas.getContext) {
+		            var ctx = theCanvas.getContext("2d");
+		            if (ctx) {
+		                ctx.fillStyle = "blue";
+		                ctx.fillRect(0, 0, 100, 50);
+
+		                // now translate the origin to the middle of the canvas
+		                // using a custom translation matrix
+		                // (a translate operation is defined as:)
+		                //  1  0  tx              
+		                //  0  1  ty
+		                //  0  0  1
+		                ctx.fillStyle = "red";
+		                var tx = ctx.canvas.width / 2;
+		                var ty = ctx.canvas.height / 2;
+		                ctx.transform(1, 0, 0, 1, tx, ty);
+		                ctx.fillRect(0, 0, 100, 50);
+		                ctx.transform(1, 0, 0, 1, -tx, -ty);
+
+		                // now let's set the current transform to a skewing one
+		                // (a skew transform is defined as:)
+		                //  1  sx 0              
+		                //  sy 1  0
+		                //  0  0  1
+		                ctx.fillStyle = "green";
+		                var sx = 0;
+		                var sy = 0.3;
+		                ctx.setTransform(1, sy, sx, 1, 0, 0);
+		                ctx.fillRect(250, 20, 100, 50);
+		            }
+		        }
+		    }
+		</script>
+	</head>
+	<body>
+		<h1>The Custom Transform</h1>
+		<p>The custom transform provides a way to define your own transforms using matrices. In this example,
+		we re-create the translate transform using a custom transform, then use another custom transform to create
+		a new transform called "skew".
+		</p>
+		<canvas id="Canvas1" width="700" height="300">Your browser does not support canvas.</canvas>
+	</body>
+</html>

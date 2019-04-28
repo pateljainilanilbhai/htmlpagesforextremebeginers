@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<HEAD>
+<TITLE>HTML5 local storage example</TITLE>
+<style type="text/css"> 
+#todolist{  
+    width:350px;  
+    height: 200px;  
+    font:normal 14px Arial;  
+    background:lightyellow;  
+    border:5px groove gray;  
+    overflow-y:scroll;  
+    padding:4px;  
+}    
+#todolist ol{  
+    margin-left:-15px;  
+}    
+#todolist li{  
+    border-bottom:1px solid gray;  
+    margin-bottom:8px;  
+}
+</STYLE>  
+</HEAD>
+<BODY>
+<DIV id="todolist" contenteditable="true">  
+<DIV contenteditable="false"><B>Enter your tasks in the following To Do List:</B></DIV>  
+    <OL>  
+    <LI>Take breakfast in ABC hotel</LI> 
+<LI>Meeting with Aggrawal and group company manager</LI>     
+    <LI>Set alarm to 5:30 am</LI>  
+    </OL>  
+</DIV>  
+<INPUT type="submit" value="Reset To Do List" onClick="resetlist();return false" />   
+<script type="text/javascript">     
+
+var defaulthtml='<div contenteditable="false"><b>Enter your tasks in the following To Do List:</b></div>\n' 
+
+defaulthtml+='<ol>\n' 
+
+defaulthtml+='<li>Take breakfast in ABC hotel</li>\n' 
+
+defaulthtml+='<li>Meeting with Aggrawal and group company manager</li>\n' 
+
+defaulthtml+='<li>Set alarm to 5:30 am</li>\n' 
+
+defaulthtml+='</ol>' 
+
+
+function resetlist(){  
+    todolistref.innerHTML=defaulthtml  
+    domstorage.todolistdata=defaulthtml  
+}  
+var todolistref=document.getElementById("todolist")  
+var domstorage=window.localStorage|| (window.globalStorage? globalStorage[location.hostname] : null)  
+if (domstorage){  
+    if (domstorage.todolistdata){ 
+        todolistref.innerHTML=domstorage.todolistdata 
+    }  
+    todolistref.onkeyup=function(e){  
+        domstorage.todolistdata=this.innerHTML  
+    }  
+}  
+</SCRIPT> 
+</HTML>

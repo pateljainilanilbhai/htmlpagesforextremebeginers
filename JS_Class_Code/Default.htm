@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        body{
+            font-family: Arial;
+            font-size: 10pt;
+        }
+        table{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        table th{
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+        table th, table td{
+            padding: 5px;
+            border-color: #ccc;
+        }
+		input[type="button"]{
+		background-color: #08F;
+		color:#fff;}
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            //Build an array containing Customer records.
+            var customers = new Array();
+            
+			
+
+            //Add the data rows.
+            
+        };
+
+        function Add() {
+            var txtName = document.getElementById("txtName");
+            var txtCountry = document.getElementById("txtCountry");
+            AddRow(txtName.value, txtCountry.value);
+            txtName.value = "";
+            txtCountry.value = "";
+        };
+
+        function Remove(button) {
+            //Determine the reference of the Row using the Button.
+            var row = button.parentNode.parentNode;
+			var name = row.getElementsByTagName("TD")[0].innerHTML;
+            if (confirm("Do you want to delete: " + name)) {
+
+                //Get the reference of the Table.
+                var table = document.getElementById("tblCustomers");
+
+                //Delete the Table row using it's Index.
+                table.deleteRow(row.rowIndex);
+            }
+        };
+
+        function AddRow(name, country) {
+            //Get the reference of the Table's TBODY element.
+            var tBody = document.getElementById("tblCustomers").getElementsByTagName("TBODY")[0];
+
+            //Add Row.
+            row = tBody.insertRow(-1);
+
+            //Add Name cell.
+            var cell = row.insertCell(-1);
+            cell.innerHTML = name;
+
+            //Add Country cell.
+            cell = row.insertCell(-1);
+            cell.innerHTML = country;
+
+            //Add Button cell.
+            cell = row.insertCell(-1);
+            var btnRemove = document.createElement("INPUT");
+            btnRemove.type = "button";
+            btnRemove.value = "Remove";
+            btnRemove.setAttribute("onclick", "Remove(this);");
+            cell.appendChild(btnRemove);
+        }
+    </script>
+    <table id="tblCustomers" cellpadding="0" cellspacing="0" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input type="text" id="txtName" /></td>
+                <td><input type="text" id="txtCountry" /></td>
+                <td><input type="button" onclick="Add()" value="Add" /></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

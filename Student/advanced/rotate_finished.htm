@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Rotate Transform</title>
+		<style type="text/css">
+			canvas {
+				border: dotted 1px black;
+				margin: 25px;
+			}
+		</style>
+		<script type="text/javascript">
+			console.log('hi');
+			var mouse = {
+  x: window.innerWidth / 2,
+  y: window.innerHeight / 2
+};
+		window.addEventListener("mousemove", function(event) {
+  mouse.x = event.clientX;
+  mouse.y = event.clientY;
+});
+		    function aa() {
+		        var theCanvas = document.getElementById('Canvas1');
+		        if (theCanvas && theCanvas.getContext) {
+		            var ctx = theCanvas.getContext("2d");
+		            if (ctx) {
+						
+						
+						ctx.translate(ctx.canvas.width/2, ctx.canvas.height/2);
+						var radian=(Math.PI / 180) * 1;
+						for (var degrees = 0; degrees < 360; degrees += 1) {
+							ctx.rotate(radian);
+							ctx.beginPath();
+							ctx.moveTo(-100,0);
+							ctx.lineTo(100,0);
+							ctx.stroke();
+							console.log(degrees);
+						}
+		            }
+		        }
+		       
+		      
+		}
+		  
+		        	function animate() {
+		        		
+			requestAnimationFrame(animate);
+			aa();
+
+		
+		    }animate();
+		</script>
+	</head>
+	<body>
+		<h1>The Rotate Transform</h1>
+		<p>.</p>
+		<canvas id="Canvas1" width="700" height="300">Your browser does not support canvas.</canvas>
+	</body>
+</html>

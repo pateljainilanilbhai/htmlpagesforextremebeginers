@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+
+		body>div
+		{
+			display: flex;
+			flex-flow: row wrap;
+		}
+		body div main,content,header,footer,aside
+		{
+			margin: 9px;padding: 20px; background-color: red; border-radius: 20px;
+		}
+		body div main,aside
+		{
+			background-color: lightyellow;
+		}
+		body div footer
+		{
+			background-color: lightgreen;
+		}
+		body div header
+		{
+			order: 1;
+			flex:0 1 100%;
+		}
+		body div nav
+		{
+			order: 2;
+			flex:0 1 100%;
+		}
+		body div main
+		{
+			order: 3;
+			flex:1;
+			height: 500px;
+			min-width: 1px;
+			flex-flow: column wrap;
+		
+		}
+		body div aside
+		{
+			order: 4;
+			flex:1;
+			height: 500px;
+			min-width: 1px;
+			flex-flow: column wrap;
+		}
+		body div footer
+		{
+			order: 5;
+			flex:0 1 100%;
+			align-self: stretch;
+		}
+
+
+
+
+		.navbar ul{
+            overflow: auto;            
+            font-family: Arial;
+		
+			list-style: none;
+        }
+		ul li{            
+			float: left;
+        }
+		ul li a{
+			font: 16px;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			display: block;
+			width: 200px;
+			background-color: green;
+			padding: 10px 10px;
+			
+		}
+	    ul li a:hover{
+			background: lightyellow;
+			color: green;
+			transition: background 1s,color 1s;
+			
+		}
+		ul li ul li{
+			float: none;
+			display: none;
+			
+		}
+		ul li:hover ul li{
+			display: block;			
+		}
+		ul li ul li:hover{
+			display: block;
+		}
+		
+		
+	</style>
+
+</head>
+<body onload="show()">
+
+	<div>
+		<div>
+<dialog id="myFirstDialog" style="width:50%;background-color:#F4FFEF;border:1px dotted black;"><center>
+<time><p id="demo" onclick ="document.getElementById('demo').innerHTML = Date()"><progress value="100" max="100"></progress>WELCOME TO CHARUSAT<progress value="100" max="100"></progress></cite></p></time>
+<button id="hide" onclick="hide()">Close</button></center>
+</dialog>
+
+</div>
+
+<!-- JavaScript to provide the "Show/Close" functionality -->
+<script type="text/JavaScript">
+function show() {  
+    var dialog = document.getElementById('myFirstDialog');  
+    //document.getElementById('show').onclick = function() {  
+        dialog.show();  
+    }  
+    function hide()
+    {
+    	var dialog = document.getElementById('myFirstDialog');  
+    	  dialog.close();  
+    }
+
+    
+   
+</script>
+		<header><img src="charusat.png" />
+<a href="c1.html" style="float:right;margin:0 20px" target="home" >
+	<figure><figcaption style="text-decoration: none;">HOME</figcaption><img src="home3.png" /></figure>
+	</a></header>
+		<nav>
+	<div style="height: 40px;background-color: green;z-index: 9999; border-radius: 20px;margin: 20px;padding: 20px; display: flex; flex-flow: row wrap;">   
+  <div class="navbar" style="margin-top: 0px;">
+	  <ul>
+		  <li><a href="#Home">Home</a></li>
+          <li><a href="#University info">University info</a>
+			  <ul>
+				  <li><a href="#CE">Computer Engineering</a></li>
+				  <li><a href="#IT">IT Engineering</a></li>
+				  <li><a href="#EC">Electronics and Communication</a></li>
+				  <li><a href="#EE">Electrical Engineering</a></li>
+				  <li><a href="#ME">Mechanical Engineering</a></li>
+				  <li><a href="#CL">Civil Engineering</a></li>
+			  </ul>
+		  </li>
+          <li><a href="#Faculties">Faculties</a>
+			  <ul>
+				  <li><a href="#CE">Computer Engineering</a></li>
+				  <li><a href="#IT">IT Engineering</a></li>
+				  <li><a href="#EC">Electronics and Communication</a></li>
+				  <li><a href="#EE">Electrical Engineering</a></li>
+				  <li><a href="#ME">Mechanical Engineering</a></li>
+				  <li><a href="#CL">Civil Engineering</a></li>
+			  </ul>
+		  </li>
+          <li><a href="#Programme">Programme</a>
+			  <ul>
+				  <li><a href="#Sports">Sports</a></li>
+				  <li><a href="#Cultural">Cultural</a></li>
+				  <li><a href="#Events">Events</a></li>
+				  <li><a href="#Seminars">Seminars</a></li>
+				  <li><a href="#workshops">Workshops</a></li>
+				  <li><a href="#placements">Placements</a></li>
+			  </ul>
+		  </li>
+          <li><a href="#Contact us">Contact us</a></li>
+         
+	  </ul>
+  </div>
+
+	</nav>
+
+		<main style="overflow: auto;z-index: -999999;">
+			<article><section>
+			<bdi><menu type="context" id="mymenu">
+  <menuitem label="CHARUSAT" icon="charusat.png">
+  </menuitem>
+  
+</menu>
+
+
+Kelavani Mandal, established in 1994, is a not for profit premier trust of India that works with the mission of social service through education. It has social lineage of more than 118 years from its parent organization Shri Charotar Moti Sattavis Leuva Patidar Samaj– Matrusanstha- known for its dynamic social revolution brought about by initiating Mass Marriages on a massive scale.
+
+Following some reflective discussions (during the centenary celebrations of Matrusanstha in 1993-94) on the activities of the Samaj since its birth, and the challenges facing the development of India in the context of liberalization, privatization and globalization of Indian economy, the Samaj decided to create a dedicated organization for knowledge creation and dissemination. The Samaj created an educational trust Shri Charotar Moti Sattavis Patidar Kelavani Mandal in 1994 with the distinct objective of creating and developing state-of-the-art educational facilities. The trust is a democratically managed institution with three layers of governance and is known for its transparent functioning and its integrity.
+
+Thus, the formation of Kelavani Mandal through Matrusanstha, ultimately led to the establishment of CHARUSAT. It was illuminated under the leadership of two former Presidents - Late Shri Chhotabhai Bhikhabhai Patel and Late Dr. K C Patel. Late Shri Chhotabhai Bhikhabhai Patel, an illustrious businessman and social leader based in Mumbai and founder President of Kelavani Mandal, always insisted on Global Standards. Late Dr. K C Patel, a renowned nuclear scientist and a prominent educationist of Gujarat, who succeeded Shri Chhotabhai Bhikhabhai Patel, dreamt of a university at Education Campus, Changa (ECC).</bdi></section></article></main>
+		<aside style="overflow: auto;z-index: -999999;">ECC to CHARUSAT
+The journey at Education Campus – Changa (now CHARUSAT Campus) started as a single Institute in the year 2000 with the establishment of Charotar Institute of Technology (CITC) as the first institute which is now known as Chandubhai S Patel Institute of Technology (CSPIT). The development started only with 240 students, 4 programmes, 1 institute and an investment of Rs. 3 Crores. Presently, CHARUSAT offers more than 64 Programs offered by 8 different institutes under the tutelage of 6 Faculties. CHARUSAT has a student strength of 6500, employee strength of 510, capital outlay of Rs. 100 Crores.
+
+Year after year institutes and programs were added. In the years 2002 and 2004, the Mandal established Charotar Institute of Computer Applications (CICA) and Ramanbhai Patel College of Pharmacy (RPCP) respectively. CICA has been rechristened as Smt. Chandaben Mohanbhai Patel Institute of Computer Applications (CMPICA). Year 2006 saw the commencement of Indukaka Ipcowala Institute of Management (I2IM). Two more institutes P D Patel Institute of Applied Sciences (PDPIAS) and Dr. K C Patel R & D Centre were established in the year 2007.
+
+Continuing the growth, in the year 2009, two more institutes were started - Charotar Institute of Physiotherapy and Charotar Institute of Nursing heralding the entry in the field of Healthcare Education. Both the institutes are rechristened. They are now called Ashok and Rita Patel Institute of Physiotherapy and Manikaka Topawala Institute of Nursing.
+
+However, in spite of the growth and achievements, there was simultaneously a sense of dissatisfaction within the ECC system about the poor fit between the curricula, pedagogy and the knowledge and skills of the students graduating from the institutions on the one hand, and the skills and knowledge expected of the graduates by the industry, on the other. The need of the hour was creative autonomy in the form of academic freedom whereby novel and revised curricula may replace the older ones and due weightage may be given to Industry synchronization and practical exposure. It had, in fact, become necessary to function as a University for transformation of society through Education.
+
+An application was made to University Grants Commission (UGC) for acquiring the status of a Deemed to be University. Similar application was made to Government of Gujarat for the establishment of a State Private University. The request made to the Government of Gujarat started getting materialized. Team CHARUSAT was invited to make presentation before the High Power Committee. And finally, on July 7, 2009, with due efforts and procedures, the conglomerate of Institutes and Programs at Education Campus, Changa was accorded the status of a University – Charotar University of Science and Technology.
+
+Thus, CHARUSAT is accorded the status of a university under Gujarat State Act No. 8 of 2009. CHARUSAT is also empowered to award degrees by UGC under Section 22 of UGC Act, 1956.
+
+The name Charotar University of Science and Technology has been conceived to pay tribute to the region – Charotar (the golden land) where it has originated.
+</aside>
+		<footer style="padding: 10px;"><center> <p> 
+		<div>		
+<details><summary><mark>Copyright @ 2018 charusat </mark></summary><p>Charotar University of Science and Technology - CHARUSAT has been conceived by Shri Charotar Moti Sattavis Patidar Kelavani Mandal to put India on global education map by making Charotar – the Land of Sardar Patel the Global Education Hub.LIKES:<meter value="0.6">60%</meter></p></details>
+	</div></p></center></footer>
+	</div>
+</body>
+</html>

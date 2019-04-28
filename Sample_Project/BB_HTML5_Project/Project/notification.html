@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<HEAD> 
+	<TITLE>HTML5 Notification Example</TITLE> 
+	<SCRIPT> 
+function RequestPermission (callback) {
+   window.webkitNotifications.requestPermission(callback);
+} 
+function add(){
+if (window.webkitNotifications.checkPermission() > 0) {
+      RequestPermission(add);
+   }
+   else {
+		var num1 = parseInt(document.getElementById('num1').value);
+		var num2 = parseInt(document.getElementById('num2').value);
+var num3=num1+num2;
+		window.webkitNotifications.createNotification("", "Sum of "+num1+" and "+num2+" is", num3).show(); 
+	}
+}
+</SCRIPT> 
+</HEAD> 
+<BODY> 
+	<H1>HTML5 Notification Example</H1> 	
+	number 1:<INPUT type="text" id="num1" value=" " ><BR/>
+	number 2:<INPUT type="text" id="num2" value=" " ><BR/>
+	<BUTTON onclick="add()">add</BUTTON> 
+</BODY>
+</HTML>

@@ -1,0 +1,281 @@
+<!doctype html>
+<head>
+    <title>HTML5 Black Book</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs/modernizr-1.6.min.js"></script>
+
+
+<style type="text/css"> 
+	
+	
+	
+	a.polaroid {
+		display: block;
+		text-decoration: none;
+		color: #333;
+		padding: 10px 10px 20px 10px;
+		width: 150px;
+		border: 1px solid #BFBFBF;
+		background-color: white;
+		z-index: 2;
+		font-size: 0.7em;
+		-webkit-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+		-moz-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+		box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+		-webkit-transition: -webkit-transform 0.5s ease-in;
+	}
+	a.polaroid:hover,
+	a.polaroid:focus,
+	a.polaroid:active {
+		z-index: 999;
+		border-color: #6A6A6A;
+		-webkit-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+		-moz-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+		box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	.polaroid img {
+		margin: 0 0 15px;
+		width: 150px;
+		height: 150px;
+	}
+	
+	a img {
+		border: none;
+		display: block;
+	}
+	
+	.photo-album {
+		position: relative;
+		width: 80%;
+		margin: 0 auto;
+		max-width: 70em;
+		height: 450px;
+		margin-top: 5em;
+		min-width: 800px;
+		max-width: 900px;
+	}
+	.photo-album .polaroid {
+		position: absolute;
+	}
+
+	.photo-album .small {
+		width: 75px;
+		padding: 6px 6px 12px 6px;
+		font-size: 0.6em;
+	}
+	.photo-album .small img {
+		width: 75px;
+		height: 75px;
+	}
+	.photo-album .medium {
+		width: 200px;
+		padding: 13px 13px 26px 13px;
+		font-size: 0.8em;
+	}
+	.photo-album .medium img {
+		width: 200px;
+		height: 200px;
+	}
+	.photo-album .large {
+		width: 300px;
+		padding: 20px 20px 30px 20px;
+		font-size: 1em;
+	}
+	.photo-album .large img {
+		width: 300px;
+		height: 300px;
+	}
+	.photo-album .img1 {
+		bottom: 10px;
+		right: 365px;
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+	.photo-album .img2 {
+		top: 50px;
+		right: 20px;
+		-webkit-transform: rotate(-4deg);
+		-moz-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+	.photo-album .img3 {
+		left: 400px;
+		top: 0;
+		-webkit-transform: rotate(-5deg);
+		-moz-transform: rotate(-5deg);
+		transform: rotate(-5deg);
+	}
+	.photo-album .img4 {
+		top: 10px;
+		left: 495px;
+		-webkit-transform: rotate(-20deg);
+		-moz-transform: rotate(-20deg);
+		transform: rotate(-20deg);
+	}
+	.photo-album .img5 {
+		bottom: 0;
+		right: 0;
+		-webkit-transform: rotate(1deg);
+		-moz-transform: rotate(1deg);
+		transform: rotate(1deg);
+	}
+	.photo-album .img6 {
+		bottom: 10px;
+		right: 156px;
+		-webkit-transform: rotate(6deg);
+		-moz-transform: rotate(6deg);
+		transform: rotate(6deg);
+	}
+	.photo-album .img7 {
+		bottom:0;
+		left:400px;
+		-webkit-transform: rotate(-10deg);
+		-moz-transform: rotate(-10deg);
+		transform: rotate(-10deg);
+	}
+	.photo-album .img8 {
+		bottom: -20px;
+		left: 700px;
+		-webkit-transform: rotate(-8deg);
+		-moz-transform: rotate(-8deg);
+		transform: rotate(-8deg);
+	}
+	.photo-album .img9 {
+		bottom: 0;
+		left: 0;
+		-webkit-transform: rotate(-8deg);
+		-moz-transform: rotate(-8deg);
+		transform: rotate(-8deg);
+	}
+	.photo-album .img10 {
+		top: 0;
+		left: 20px;
+		-webkit-transform: rotate(8deg);
+		-moz-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
+	
+	
+	a:hover,
+	a:focus {
+		z-index: 5;
+	}
+	
+	
+	
+ 
+	</style> 
+
+
+</head>
+<body>
+    <div id="container">
+        <div class="extra_wrap">
+            <!-- header -->
+          <header> 
+		 <!-- .logo --> 
+        <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="HTML5 Black Book" title="HTML5 Black Book" /></a></div> 
+        <!-- /.logo --> 
+        <nav> 
+        <ul class="sf-menu"> 
+          <li><a href="index.html" class="current">Home</a></li> 
+<li><a href="#">HTML5 Features</a>
+<ul> 
+
+<li><a href="editablecontentarticle.html">Editable Content</a></li>
+<li><a href="spellcheckarticle.html">Spell Checking</a></li>
+<li><a href="datastoragearticle.html">Data Storage</a></li>
+<li><a href="dndarticle.html">Drag and Drop</a></li>
+<li><a href="notificationarticle.html">Desktop Notification</a></li>
+<li><a href="geolocationarticle.html">Geolocation</a></li>
+</ul>
+</li> 
+<li><a href="#">CSS3 Features</a>
+<ul> 
+
+<li><a href="opacityeffectsarticle.html">Opacity Effects</a></li>
+<li><a href="transformationeffectsarticle.html">Transformation Effects</a></li>
+<li><a href="transitioneffectsarticle.html">Transition Effects</a></li>
+<li><a href="animationeffectsarticle.html">Animation Effects</a></li>
+
+</ul>
+</li>
+
+<li><a href="#">Entertainment Services</a> 
+<ul>
+          <li><a href="songs.html">Songs</a></li> 
+<li><a href="videos.html">Videos</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</li>
+<li><a href="feedback.html">Feedback</a></li>
+
+<li><a href="about.html">About Us</a></li>          
+        
+        </ul> 
+      </nav> 
+    </header> 
+            <!-- EOF header -->
+            <h1>
+                Pictures
+            </h1>
+            <div id="main">
+<div class="photo-album"> 
+                
+                    <a href="images/image1.jpg" target="new" class="large polaroid img1";>
+                        <img src="images/image1_1.png" alt="image 1" />
+                    </a>
+                
+                    <a href="images/image2.jpg" target="new" class="polaroid img2">
+                        <img src="images/image2_2.png" alt="image 2" />
+                    </a>
+               
+                    <a href="images/image3.jpg" target="new" class="medium polaroid img3">
+                        <img src="images/image3_3.png" alt="image 3" />
+                    </a>
+                
+                    <a href="images/image4.jpg" target="new" class="polaroid img4">
+                        <img src="images/image4_4.png" alt="image 4" />
+                    </a>
+               
+                
+                    <a href="images/image5.jpg" target="new" class="polaroid img5">
+                        <img src="images/image5_5.png" alt="image 5" />
+                    </a>
+                
+                    <a href="images/image6.jpg" target="new" class="large polaroid img6">
+                        <img src="images/image6_6.png" alt="image 6" />
+                    </a>
+              
+                    <a href="images/image7.jpg" target="new" class="polaroid img7">
+                        <img src="images/image7_7.png" alt="image 7" />
+                    </a>
+                
+                    <a href="images/image8.jpg" target="new" class="small polaroid img8">
+                        <img src="images/image8_8.png" alt="image 8" />
+                    </a>
+                
+                    <a href="images/image9.jpg" target="new" class="polaroid img9">
+                        <img src="images/image9_9.png" alt="image 9" />
+                    </a>
+                
+                    <a href="images/image10.jpg" target="new" class="polaroid img10">
+                        <img src="images/image10_10.png" alt="image 10" />
+                    </a>
+                </div>
+            </div>
+       <footer> 
+		<div class="copy">&copy; Copyright 2011, Kogent Learning Solutions Inc.</div> 
+       
+    </footer>
+
+ </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Canvas Image Rotator Example</title>
+		<script type="text/javascript">
+			var imagePaths = [
+				"images/j0149014.jpg", "images/j0149024.jpg", "images/j0149029.jpg", "images/j0178677.jpg"
+			];
+			var showCanvas = null;
+			var showCanvasCtx = null;
+			var img = document.createElement("img");
+			var currentImage = 0;
+			var revealTimer;
+
+			window.onload = function () {
+				showCanvas = document.getElementById('showCanvas');
+				showCanvasCtx = showCanvas.getContext('2d');
+				
+				img.setAttribute('width','600');
+				img.setAttribute('height','400');
+				switchImage();
+				
+				// start the animation
+				setInterval(switchImage,3000);
+			}
+			
+			function switchImage() {
+				img.setAttribute('src',imagePaths[currentImage++]);
+				if (currentImage >= imagePaths.length)
+					currentImage = 0;
+				
+				showCanvasCtx.globalAlpha = 0.1;
+				revealTimer = setInterval(revealImage,100);
+			}
+			
+			function revealImage() {
+				showCanvasCtx.save();
+				showCanvasCtx.drawImage(img,0,0,600,400);
+				showCanvasCtx.globalAlpha += 0.1;
+				if (showCanvasCtx.globalAlpha >= 1.0)
+					clearInterval(revealTimer);
+				showCanvasCtx.restore();
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id='showCanvas' width='600' height='400'>
+			Canvas Not Supported
+		</canvas>
+	</body>
+</html>

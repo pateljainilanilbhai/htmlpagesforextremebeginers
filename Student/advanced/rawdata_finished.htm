@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Accessing Raw Pixel Data</title>
+		<style type="text/css">
+			#Canvas1 {
+				border: dotted 1px black;
+			}
+		</style>
+		<script type="text/javascript">
+		    window.onload = function () {
+		        var theCanvas = document.getElementById('Canvas1');
+		        if (theCanvas && theCanvas.getContext) {
+		            var ctx = theCanvas.getContext("2d");
+		            if (ctx) {
+		                // draw an image directly onto the canvas at the top left
+		                var srcImg = document.getElementById("img1");
+		         
+
+		                // get the image data and convert every 15th row to
+		                // a 5-row strip of inverted pixels
+		                var curRow = 0, maxRow = ctx.canvas.height;
+		                var imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+		                var pixels = imgData.data;
+
+		                while (curRow < maxRow) {
+		                    for (var i = 0; i < 5; i++) {
+		                        var thisRowBytes = (curRow + i) * ctx.canvas.width * 4;
+		                        for (var j = 0; j < ctx.canvas.width * 4; j += 4) {
+		                            pixels[thisRowBytes + j] = 255 - pixels[thisRowBytes + j]; // red
+		                            pixels[thisRowBytes + j + 1] = 255 - pixels[thisRowBytes + j + 1]; // green
+		                            pixels[thisRowBytes + j + 2] = 255 - pixels[thisRowBytes + j + 2]; // blue
+		                        }
+		                    }
+		                    curRow += 10;
+		                }
+		                ctx.putImageData(imgData, 0, 0);
+		            }
+		        }
+		    }
+		</script>
+	</head>
+	<body>
+		<h1>Accessing Raw Pixel Data</h1>
+		<p>A very powerful feature of the canvas API is the ability to directly access the individual pixels of the image. 
+		This demo shows how to retrieve the pixel data from a canvas, manipulate it, and put it back into the canvas.</p>
+		<canvas id="Canvas1" width="715" height="315">Your browser does not support canvas.</canvas>
+		
+		<!-- source images used in this example -->
+		<img id="img1" src="images/tulips.jpg" width="715" height="315">
+	</body>
+</html>

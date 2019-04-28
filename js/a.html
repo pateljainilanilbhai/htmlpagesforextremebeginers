@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<script src="jqueryfull.js"></script>
+<title>Untitled Document</title>
+</head>
+	
+<body>
+	<input type="text" id="a"><br>
+	<input type="text" id="b"><br>
+	<input type="text" id="c" readonly><br>
+<button>add</button>
+</body>
+	<script>$(document).ready(function(){
+    
+			$("button").click(function(){
+				console.log("clicked");
+				$("#c").val((parseInt($("#a").val())+parseInt($("#b").val())));
+				
+			
+		
+			
+			
+});
+</script>
+</html>

@@ -1,0 +1,125 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html;
+charset=iso-8859-1" />
+<title>DOM-based form validator</title>
+<script language="javascript">
+// validate form
+function validateForm(formObj){
+            valid=true;
+            var fname=formObj.elements[0];
+            if(!fname){return};
+            if(!fname.value){showError(fname,'Enter your First Name')};
+            var lname=formObj.elements[1];
+            if(!lname){return};
+            if(!lname.value){showError(lname,'Enter your Last Name')};
+            var email=formObj.elements[2];
+            if(!email){return};
+            if(!email.value){showError(email,'Enter your email address')};
+            var age=formObj.elements[3];
+            if(!age){return};
+            if(!age.value){showError(age,'Enter your age (1-99)')};
+            var postadd=formObj.elements[4];
+            if(!postadd){return};
+            if(!postadd.value){showError(postadd,'Enter your postal address')};
+            return valid;
+}
+// display error messages
+function showError(obj,message){
+            if(!obj.errorNode){
+                        obj.onchange=hideError;
+                        var span=document.createElement('span');
+                        span.className='error';
+                        span.appendChild(document.createTextNode(message));
+                        obj.parentNode.appendChild(span);
+                        obj.errorNode=span;
+            }
+            valid=false;
+            return
+}
+// hide error messages
+function hideError(){
+            this.parentNode.removeChild(this.errorNode);
+            this.errorNode=null;
+            this.onchange=null;
+}
+// execute 'ValidateForm()'
+window.onload=function(){
+            
+            if(document.getElementById&&document.
+
+getElementsByTagName&&document.createElement){
+                        var theform=document.getElementsByTagName
+
+('form')[0];
+                        if(theform){theform.onsubmit=function()
+
+{return validateForm(this)}};
+    }
+}
+</script>
+<style type="text/css">
+body{
+            margin: 0;
+            padding: 0;
+            background: #fff;
+}
+#formcontainer{
+            width: 600px;
+            height: 450px;
+            background: #eee;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+}
+#labelcontainer{
+            float: left;
+            width: 200px;
+            text-align: right;
+            padding-right: 10px;
+}
+#labelcontainer p{
+            font: normal 12px Arial, Helvetica, sans-serif;
+            color: #000;
+            margin: 10px 0 0 0;
+}
+#boxcontainer{
+            float: left;
+            width: 300px;
+}
+#boxcontainer p{
+            font: normal 12px Arial, Helvetica, sans-serif;
+            color: #000;
+            margin: 4px 0 0 0;
+}
+span{
+            font: bold 12px Arial, Helvetica, sans-serif;
+            color: #f00;
+            margin-left: 10px;
+}
+</style>
+</head>
+<body>
+<div id="formcontainer">
+<form>
+<div id="labelcontainer">
+<p>First Name</p>
+<p>Last Name</p>
+<p>Email</p>
+<p>Age</p> 
+<p>Postal Address</p>
+<p>Comments</p>
+</div>
+<div id="boxcontainer">
+<p><input type="text" name="fname" /></p>
+<p><input type="text" name="lname" /></p>
+<p><input type="text" name="email" /></p>
+<p><input type="text" name="age" /></p>
+<p><input type="text" name="paddress" /></p>
+<p><textarea rows="10" cols="20"></textarea></p>
+<p><input type="submit" name="send" value="Send Data"
+/></p>
+</div>
+</form>
+</div>
+</body>
+</html>

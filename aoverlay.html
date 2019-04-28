@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+		#d
+		{
+			z-index: -1000;
+			opacity: 0.8;
+			margin: auto;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<center><button class="a" onmouseover="onn()">CLICK HERE</button></center>
+<center>
+<div id="d" >
+	<center><img src="back.jpg" height="50%" width="50%"></center>
+</div></center>
+<script type="text/javascript">
+	function onn(){
+		var a=document.getElementById("d").style.display;
+		
+		if(a=="none"||a=="")
+		{
+			document.getElementById("d").style.display="block";
+		}
+		else
+		{
+			document.getElementById("d").style.display="none";
+		}
+	}
+</script>
+
+</body>
+</html>

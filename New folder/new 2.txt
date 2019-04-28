@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Unordered List with Circle Bullets</h2>
+<ul type="circle" > <!-- <ul style="list-style-type:circle"> -->
+ <li>I2IM</li>
+ <li>PDPIAS</li>
+ <li>ARIP</li>
+ </ul>
+</body>
+</html>

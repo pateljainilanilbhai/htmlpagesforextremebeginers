@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<style>
+		body {
+   			 	background-image:    url(back.jpg);
+   				 background-size:     cover;                     
+				background-repeat:   no-repeat;				           
+		}
+		ul {
+			 margin: 0px;
+			 padding: 0px;
+			 list-style: none;
+			 font-family: arial;
+		}
+
+		ul li {
+			 float: left;
+			 width: 16.66%;
+			 height: 40px;
+			 background-color: black;
+			 opacity: .8;
+			 line-height: 40px;
+			 text-align: center;
+			 font-size: 15px;
+
+		}
+		ul li ul li
+		{
+			z-index: 9999;
+		}
+
+		ul li a {
+			 text-decoration: none;
+			 color: white;
+			 display: block;
+		}
+		ul li a:hover {
+			background-color: green;
+		}
+
+		ul li ul li{
+			display: none;
+		}
+
+		ul li:hover ul li {
+			 display: block;
+			 width: 100%;
+			 position: relative;
+			 z-index: 99999;
+		}
+		
+		span:hover{
+			font-size: 250px;
+			position: relative;
+			z-index: -9999;
+		}
+		h1,h2 {
+    			text-shadow: -6px 0 black, 0 6px black, 6px 0 black, 0 -6px black;text-decoration-color: green;
+				}
+			@keyframes div_background{
+				0% {color: #E11F27;}
+				12.5% {color: #BB1E5;}
+				25% {color: #816CAF;}
+				37.5% {color: #282667;}
+				50% {color: #543092;}
+				62.5% {color: #282667;}
+				75% {color: #816CAF;}
+				87.5% {color: #BB1E53;}
+				100% {color: #E11F27;}
+			}
+	
+			.main{
+				animation-name: div_background;
+				animation-duration: 16s;
+				animation-iteration-count: infinite;
+			}
+			#overlay {
+				position: fixed; 
+				display: none; 
+				width: 100%; 
+				height: 100%; 
+				top: 0; 
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(0,0,0,0.5); 
+				z-index: 20;
+				cursor: pointer; 
+			}
+	</style>
+</head>
+<html>
+<body background="back.jpg" >	
+	<div id="overlay" onclick="off()"><h1 style="font-size: 200px; color: aliceblue; position: fixed; top: 150px; left: 250px">Welcome</h1></div>
+	<div style="z-index: 99999">
+	<ul style="transform: translateX(5px);">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Animals</a>
+		    <ul>
+		        <li><a href="#">Lion</a></li>
+		        <li><a href="#">Monkey</a></li>
+		        <li><a href="#">Elephent</a></li>
+		        <li><a href="#">Cheetah</a></li>
+				<li><a href="#">Snacks</a></li>
+		    </ul>
+		</li>
+	    <li><a href="#">Branches</a>
+		    <ul>
+		        <li><a href="#">Surat</a></li>
+		        <li><a href="#">Vadodara</a></li>
+		        <li><a href="#">Ahemdabad</a></li>
+		        <li><a href="#">Saurastra</a></li>
+		    </ul>
+		</li>
+	    <li><a href="#">Fees</a>
+		    <ul>
+		        <li><a href="#">Children</a></li>
+		        <li><a href="#">Adults</a></li>
+		        <li><a href="#">Seniour Citizens</a></li>
+		        <li><a href="#">Goverment Officers</a></li>
+		    </ul>
+		</li>
+		<li><a href="#">Contact us</a>
+			<ul>
+				<li><a href="#">9512881003</a></li>
+				<li><a href="#">Visit Us !</a></li>
+			</ul>
+		</li>
+		<li style="float: right"><a href="#">Login</a>
+			<ul>
+				<li><a href="#">Admin</a></li>
+				<li><a href="form.html">User</a></li>
+			</ul>			
+		</li>
+	</ul>	
+</div><div style="z-index: -9999;">
+	<h1 style="font-size: 150px; " class="main"><span>S</span><span>A</span><span>N</span><span>C</span><span>T</span><span>U</span><span>A</span><span>R</span><span>Y</span></h1></div>
+	<button onclick="on()">Turn on overlay effect</button>
+	<script>
+	function on() {
+    document.getElementById("overlay").style.display = "block";
+		}
+
+	function off() {
+		document.getElementById("overlay").style.display = "none";
+		}
+	</script>
+</body>
+</html>

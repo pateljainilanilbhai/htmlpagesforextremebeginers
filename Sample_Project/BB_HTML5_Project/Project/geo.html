@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<HEAD>
+<META charset="utf-8" />
+<TITLE>GeoLocation Demonstrated</TITLE>
+</HEAD>
+<BODY>
+
+<SECTION id="wrapper">  
+<SCRIPT type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></SCRIPT>  
+
+<ARTICLE>  
+
+ <P><SPAN id="status">Please wait..we are trying to locate you...</SPAN></P>  
+
+</ARTICLE>  
+
+<SCRIPT>  
+
+function success(position) {  
+
+var s = document.querySelector('#status');    
+
+if (s.className == 'success') {  
+
+ return;  
+
+}     
+
+s.innerHTML = "found you!!!!!   Your latitude is:"+position.coords.latitude+" and longitude is:"+position.coords.longitude;
+
+s.className = 'success';    
+
+var mapcanvas = document.createElement('div');  
+
+mapcanvas.id = 'mapcanvas';  
+
+mapcanvas.style.height = '400px';  
+
+mapcanvas.style.width = '560px';   
+
+document.querySelector('article').appendChild(mapcanvas);    
+
+var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);  
+
+var myOptions = {  
+
+ zoom: 15,  
+
+center: latlng,  
+
+ mapTypeControl: false,  
+
+ navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},  
+
+ mapTypeId: google.maps.MapTypeId.ROADMAP  
+
+};  
+
+var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);   
+
+var marker = new google.maps.Marker({  
+
+ position: latlng,  
+
+map: map,  
+
+ title:"You are here!" 
+
+});  
+
+}     
+
+function error(msg) {  
+
+var s = document.querySelector('#status');  
+
+s.innerHTML = typeof msg == 'string' ? msg : "failed";  
+
+s.className = 'fail';   
+
+// console.log(arguments);  
+
+ }     
+
+if (navigator.geolocation) {  
+
+navigator.geolocation.getCurrentPosition(success, error);  
+
+} else {  
+
+ error('not supported');  
+
+ }    
+
+</SCRIPT>  
+
+</SECTION> 
+
+</BODY>
+</HTML>

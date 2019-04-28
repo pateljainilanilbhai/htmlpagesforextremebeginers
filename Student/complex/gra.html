@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<style type="text/css">
+			#Canvas1 {
+				border: dotted 1px black;
+			}
+		</style>
+	
+</head>
+
+<body>
+	<h1>Drawing Gradients</h1>
+		<p>The HTML5 Canvas supports two kinds of gradients - linear and radial.</p>
+		<canvas id="Canvas1" width="700" height="300">Your browser does not support canvas.</canvas>
+</body>
+	
+	
+	
+	<script type="text/javascript">
+		var canvas = document.querySelector('canvas');
+		var mouse = {
+  x: window.innerWidth / 2,
+  y: window.innerHeight / 2
+};
+		window.addEventListener("mousemove", function(event) {
+  mouse.x = event.clientX;
+  mouse.y = event.clientY;
+});
+
+		var e = canvas.getContext('2d');
+		
+		
+
+
+  
+		function Star() {
+			this.x=mouse.x;
+			this.y=mouse.y;
+			
+
+			this.update = function() {
+
+				this.x=mouse.x;
+				this.y=mouse.y-110;
+				this.draw();
+
+
+			}
+			this.draw = function() {
+				
+				e.beginPath();
+						e.arc(520,150,80,0,2.5*Math.PI);
+						e.stroke();						
+						var gradient=e.createRadialGradient(this.x,this.y,0,520,150,100);
+						gradient.addColorStop(0,"violet");						
+						gradient.addColorStop(1/6,"indigo");						
+						gradient.addColorStop(2/6,"blue");						
+						gradient.addColorStop(3/6,"green");						
+						gradient.addColorStop(4/6,"yellow");						
+						gradient.addColorStop(5/6,"black");						
+						gradient.addColorStop(1,"red");						
+						e.fillStyle=gradient;
+						e.fill();				
+				
+			}
+		}
+
+		
+		var s=new Star();
+  
+		
+		function animate() {
+			requestAnimationFrame(animate);
+			s.update();
+		}
+
+		animate();
+</script>
+	
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Drawing Paths</title>
+		<style type="text/css">
+			#Canvas1 {
+				border: dotted 1px black;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var theCanvas = document.getElementById('Canvas1');
+				if (theCanvas && theCanvas.getContext) {
+					var ctx = theCanvas.getContext("2d");
+					if (ctx) {
+		ctx.beginPath();
+		ctx.strokeStyle="rgba(0,0,255,1)";
+		ctx.lineWidth=10;
+		ctx.moveTo(25,250);
+		ctx.lineTo(100,70);
+		ctx.stroke();
+		ctx.lineTo(200,90);
+		ctx.stroke();
+		ctx.lineTo(300,250);
+			ctx.stroke();
+			ctx.closePath();
+			ctx.beginPath();
+			
+		ctx.strokeStyle="rgba(0,0,255,1)";
+		ctx.lineWidth=10;
+		ctx.moveTo(300,250);
+		ctx.lineTo(375,70);
+		ctx.stroke();
+		ctx.lineTo(475,90);
+		ctx.stroke();
+		ctx.lineTo(575,250);
+			ctx.stroke();
+			ctx.lineTo(300,250);
+			ctx.stroke();
+			ctx.fillStyle="red";
+			ctx.fill();
+			ctx.closePath();
+
+
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Drawing Paths</h1>
+		<p>This example will draw paths, both open and closed</p>
+		<canvas id="Canvas1" width="700" height="300">Your browser does not support canvas.</canvas>
+	</body>
+</html>

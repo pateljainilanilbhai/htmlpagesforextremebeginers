@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+#myDiv:hover {    
+    transform: rotateX(180deg);     
+     transition: transform 5s;
+}
+#myDiv1:hover {    
+     transform: rotateY(180deg);     
+     transition: transform 5s;
+}
+#myDiv2:hover {
+     transform: rotateZ(180deg);
+     transition: transform 5s;
+}
+#my:hover{
+	margin-top: 20000px;
+
+	transition: transform 10s,margin-top 10s;	
+	transform: rotate3d(2, -1, -1, 10turn) scale3d(2,2,2);
+	}
+	</style>
+
+</head>
+<body>
+<center><div id="my" style="width: 500px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    perspective: initial;
+    perspective-origin: center;
+    backface-visibility: visible;
+    margin-top: 20px;
+
+    
+    letter-spacing: 3px;
+    color: blue;
+    text-decoration: underline;
+    text-transform: capitalize;
+    line-height: 1.8;
+    direction: ltr;
+    word-spacing: 10px;
+    text-shadow: 3px 2px red; 
+    font-family: Arial, Helvetica, sans-serif; font-size:2vw;
+    font-style: italic;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-overflow: ellipsis;
+     overflow: visible; '
+     word-wrap: break-word; 
+     word-break: keep-all;
+
+    ">
+	WELCOME
+</div>
+
+
+
+<div>
+This a normal div element.
+</div>
+
+<div id="myDiv">
+This div element is rotated 180 degrees x axis.
+</div>
+
+<div id="myDiv1">
+This div element is rotated 180 degrees y axis.
+</div>
+
+
+<div id="myDiv2">
+This div element is rotated 180 degrees z axis.
+</div>
+</center>
+
+
+
+</body>
+</html>

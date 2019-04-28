@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A little about us...</title>
+<meta name="description" content="A lynda.com example of HTML5 and CSS3">
+<meta name="keywords" content="html5, css3, lynda, local storage, canvas, forms, semantics, web apps">
+<!--make sure mobile devices display the page at the proper scale	-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="_css/main.css" rel="stylesheet" type="text/css" media="screen, projection">
+<link href="_css/jquery_widgets.css" rel="stylesheet" media="screen, projection" />	
+<link href="_css/tablet.css" rel="stylesheet" type="text/css" media="all and (min-width: 481px) and (max-width: 768px)" />
+<link href="_css/mobile.css" rel="stylesheet" type="text/css" media="all and (min-width: 0px) and (max-width: 480px)" />
+<script src="_scripts/jquery-1.5.1.min.js"></script>
+<script src="_scripts/jquery-ui-1.8.10.custom.min.js"></script>
+<script src="_scripts/menus.js"></script>
+
+<script type="text/javascript">
+    var tourdata = [
+        { name: "Big Sur Retreat", duration: 200, elevation: 160, environment: 180, difficulty: 250 },
+        { name: "Channel Islands Excursion", duration: 100, elevation: 50, environment: 100, difficulty: 75 },
+        { name: "The Death Valley Survivor's Trek", duration: 100, elevation: 75, environment: 350, difficulty: 300 },
+        { name: "In the Steps of John Muir", duration: 300, elevation: 200, environment: 100, difficulty: 350 },
+        { name: "The Mt. Whitney Climbers Tour", duration: 400, elevation: 350, environment: 300, difficulty: 400 }
+    ];
+    var tourChart = null;
+    var tourCtx = null;
+
+    function drawChart(forWhichTour) {
+        drawBackground();
+        drawLabels(forWhichTour);
+        drawTourData(forWhichTour);
+    }
+
+    function drawBackground() {
+        tourCtx.save();
+
+        // fill in the chart background
+        tourCtx.fillStyle = "#e1d8b9";
+        tourCtx.fillRect(0,0,tourCtx.canvas.width,tourCtx.canvas.height);
+
+        // create the graph area
+        tourCtx.strokeStyle = "#252525";
+        tourCtx.strokeRect(180, 100, 480, 260);
+
+        // draw the chart lines
+        tourCtx.strokeStyle = "#989898";
+        for (var x = 180; x < 660; x += 20) {
+            tourCtx.beginPath();
+            tourCtx.moveTo(x, 100);
+            tourCtx.lineTo(x, 360);
+            tourCtx.stroke();
+        }
+        
+        tourCtx.restore();
+    }
+
+    function drawLabels(forWhichTour) {
+        tourCtx.save();
+
+        // draw tour name
+        tourCtx.font = "24pt Arial";
+        tourCtx.fillStyle = "#3C6B92";
+        tourCtx.fillText("Tour Name: " + tourdata[forWhichTour].name, 20, 65);
+
+        // draw the labels
+        tourCtx.font = "20pt Arial";
+        tourCtx.fillStyle = "#3C6B92";
+        tourCtx.fillText("Duration", 20, 155);
+        tourCtx.fillText("Elevation", 20, 210);
+        tourCtx.fillText("Environment", 20, 265);
+        tourCtx.fillText("Difficulty", 20, 320);
+
+        tourCtx.restore();
+    }
+
+    function drawTourData(forWhichTour) {
+        tourCtx.save();
+
+        tourCtx.strokeStyle = "#606060";
+        tourCtx.fillStyle = "#f7f700";
+        // draw duration
+        tourCtx.fillRect(181, 130, tourdata[forWhichTour].duration, 30);
+        tourCtx.strokeRect(181, 130, tourdata[forWhichTour].duration, 30);
+        // draw elevation
+        tourCtx.fillRect(181, 185, tourdata[forWhichTour].elevation, 30);
+        tourCtx.strokeRect(181, 185, tourdata[forWhichTour].elevation, 30);
+        // draw environment
+        tourCtx.fillRect(181, 240, tourdata[forWhichTour].environment, 30);
+        tourCtx.strokeRect(181, 240, tourdata[forWhichTour].environment, 30);
+        // draw difficulty - green for easy, yellow for moderate, red for hard
+        if (tourdata[forWhichTour].difficulty <= 150)
+            tourCtx.fillStyle = "#00d366";
+        else if (tourdata[forWhichTour].difficulty > 150 && tourdata[forWhichTour].difficulty < 300)
+            tourCtx.fillStyle = "#f7f700";
+        else if (tourdata[forWhichTour].difficulty >= 300)
+            tourCtx.fillStyle = "#ce0000";
+        tourCtx.fillRect(181, 295, tourdata[forWhichTour].difficulty, 30);
+        tourCtx.strokeRect(181, 295, tourdata[forWhichTour].difficulty, 30);
+
+        tourCtx.restore();
+    }
+
+    $("document").ready(function () {
+        tourChart = document.getElementById("tourfinder");
+        tourCtx = tourChart.getContext("2d");
+
+        $("#tourselector").bind("change", function () { drawChart(this.selectedIndex) });
+
+        drawChart(0);
+    });
+</script>
+
+</head>
+<body class="no-js">
+<div id="wrapper">
+  <header id="mainHeader"> <a href="index.htm" title="home" class="logo">
+    <div id="logo">
+    <h1>Explore California</h1>
+    </div>
+    </a>
+    <nav id="siteNav">
+      <h1>Where do you want to go?</h1>
+      <ul>
+       <li><a href="tours.htm" title="Our tours" class="current">Tours <br /><span class="tagline">follow our bliss</span></a>
+          <ul>
+            <li><a href="tours.htm" title="Our tours">All Tours</a></li>
+            <li><a href="tours.htm" title="find tours">Tours by Activity</a></li>
+            <li><a href="tours.htm" title="find tours">Tours by Region</a></li>
+            <li><a href="tours.htm" title="find tours">Tour Finder</a></li>
+          </ul>
+        </li>
+        <li><a href="mission.htm" title="What we believe">Mission <br /><span class="tagline">what makes us different?</span></a></li>
+        <li><a href="resources.htm" title="planning resources">Resources <br /><span class="tagline">plan your trip</span></a>
+          <ul>
+            <li><a href="resources/faq.htm" title="Got questions?">Tour FAQs</a></li>
+            <li><a href="resources/links.htm" title="additional resources">Tour Information</a></li>
+            <li><a href="resources/terms.htm" title="terms and conditions">Site Terms</a></li>
+          </ul>
+        </li>
+        <li><a href="explorers.htm" title="Our community">Explorers <br /><span class="tagline">join our community</span></a>
+          <ul>
+            <li><a href="explorers/join.htm" title="join our community">Join the Explorers</a></li>
+            <li><a href="blog/index.htm" title="read our blog!">Read our Blog</a></li>
+            <li><a href="explorers/gallery.htm" title="contributor photos">Tour Photos</a></li>
+            <li><a href="explorers/video.htm" title="check out our podcast">Video podcast</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.htm" title="contact us" class="last">Contact <br /><span class="tagline">we're listening</span></a>
+          <ul>
+            <li><a href="support.htm" title="need help?">Support</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section id="mainContent">
+  <header id="contentHeader" class="hasCrumbs">
+  <h1>Our Tours</h1>
+  <div id="subLinks">
+  		<ul>
+            <li><a href="tours.htm" title="Our tours">All Tours</a></li>
+            <li><a href="tours.htm" title="find tours">Tours by Activity</a></li>
+            <li><a href="tours.htm" title="find tours">Tours by Region</a></li>
+            <li><a href="tours.htm" title="find tours">Tour Finder</a></li>
+          </ul>
+      </div>
+  </header>
+ <article id="mainArticle"> <h1>Tour Finder</h1>
+ 
+ <div class="multiCol">
+   <p>Not sure which tour to take? Use our handy HTML5-powered Tour Finder to help you select the best tour 
+   to fit your needs and abilities. Each tour has a Duration, Elevation, Distance, and Overall Difficuly rating. 
+   Try choosing different tours to see how each one measures up and then decide for yourself!</p>
+   <p>If you have any questions about any of our tours, feel free to <a href="contact.htm">contact us</a>, or check out our handy 
+   <a href="explorers/faq.htm">FAQ</a> for a quick overview of our services.</p>
+ </div>
+ <div id="tourDescriptions">
+    <p>Choose a tour: <select id="tourselector">
+        <option value="BigSur">Big Sur Retreat</option>
+        <option value="ChIs">Channel Islands Excursion</option>
+        <option value="DeathVal">The Death Valley Survivor's Trek</option>
+        <option value="JohnMuir">In the Steps of John Muir</option>
+        <option value="MtWhit">The Mt. Whitney Climbers Tour</option>
+    </select></p>
+    <canvas id="tourfinder" width="700" height="400" style="border: 1px solid"></canvas>
+    </div>
+ </article>
+ </section>
+  <aside id="secondaryContent">
+  <div id="specials" class="callOut">
+        <h1>Monthly Specials</h1>
+        <h2 class="top"><img src="_images/calm_bug.gif" alt="California Calm" width="75" height="75" />California Calm</h2>
+        <p>Day Spa Package <br />
+          <a href="tours/tour_detail_cycle.htm">$250</a></p>
+        <h2><img src="_images/desert_bug.gif" alt="From desert to sea" width="75" height="75" />From Desert to Sea</h2>
+        <p>2 Day Salton Sea <br />
+          <a href="tours/tour_detail_cycle.htm">$350</a></p>
+        <h2><img src="_images/backpack_bug.gif" alt="Backpack Cali" width="75" height="41" />Backpack Cali</h2>
+        <p>Big Sur Retreat <br />
+          <a href="tours/tour_detail_cycle.htm">$620</a></p>
+          <h2><img src="_images/taste_bug.gif" alt="Taste of California" width="75" height="75" />Taste of California</h2>
+        <p>Tapas &amp; Groves <br />
+          <a href="tours/tour_detail_taste.htm">$150</a></p>
+      </div>
+      <div id="trivia" class="callOut">
+        <h1>Did You Know?</h1>
+        <p>Among the prehistoric species associated with the La Brea Tar Pits are mammoths, dire wolves, short-faced bears, ground sloths, and the state fossil of California, the sabertoothed cat, <em>Smilodon californicus</em>.</p>
+        </div>
+  </aside>
+  <footer id="pageFooter">
+  <section id="quickLinks">
+  <h1>Quick Nav</h1>
+    <ul class="quickNav">
+      <li><a href="index.htm" title="Our home page">Home</a></li>
+      <li><a href="tours.htm" title="Explore our tours">Tours</a></li>
+      <li><a href="mission.htm" title="What we think">Mission</a></li>
+      <li><a href="resources.htm" title="Guidance and planning">Resources</a></li>
+      <li><a href="explorers.htm" title="Join our community">Explorers</a></li>
+      <li><a href="contact.htm" title="Contact and support">Contact</a></li>
+    </ul>
+    </section>
+  <section id="footerResources">
+  <h1>Resources</h1>
+    <ul class="quickNav">
+      <li><a href="resources/faq.htm" title="Our home page">FAQ</a></li>
+      <li><a href="support.htm" title="Need help?">Support</a></li>
+      <li><a href="resources/legal.htm" title="The fine print">Legal</a></li>
+    </ul>
+  </section>
+  <section id="companyInfo">
+  <h1>Contact</h1>
+  <h2>Explore California</h2>
+      <p>5605 Nota Street<br />
+        Ventura, CA 93003</p>
+      <p>866.555.4310<br />866.555.4315 <em>(24 hour support)</em></p>
+  </section>
+  </footer>
+</div>
+</body>
+</html>

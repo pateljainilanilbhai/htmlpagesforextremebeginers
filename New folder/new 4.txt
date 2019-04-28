@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Ordered List with Letters</h2>
+<ol type="A" >
+ <li>CE</li>
+ <li>IT</li>
+ <li>EC</li>
+ <li>CL</li>
+ <li>ME</li>
+ </ol>
+</body>
+</html>

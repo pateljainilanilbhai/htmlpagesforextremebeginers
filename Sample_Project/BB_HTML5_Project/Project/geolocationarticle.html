@@ -1,0 +1,100 @@
+<!doctype html>  
+ 
+<head> 
+  
+ 
+  <title>HTML5 Black Book</title> 
+  
+  <link rel="stylesheet" href="css/style.css"> 
+  
+  <script src="js/libs/modernizr-1.6.min.js"></script> 
+ 
+</head> 
+ 
+<body> 
+<div id="container"> 
+  	<div class="extra_wrap"> 
+  	 <!-- header --> 
+  <header> 
+		 <!-- .logo --> 
+        <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="HTML5 Black Book" title="HTML5 Black Book" /></a></div> 
+        <!-- /.logo --> 
+        <nav> 
+        <ul class="sf-menu"> 
+          <li><a href="index.html" class="current">Home</a></li> 
+<li><a href="#">HTML5 Features</a>
+<ul> 
+
+<li><a href="editablecontentarticle.html">Editable Content</a></li>
+<li><a href="spellcheckarticle.html">Spell Checking</a></li>
+<li><a href="datastoragearticle.html">Data Storage</a></li>
+<li><a href="dndarticle.html">Drag and Drop</a></li>
+<li><a href="notificationarticle.html">Desktop Notification</a></li>
+<li><a href="geolocationarticle.html">Geolocation</a></li>
+
+</ul>
+</li> 
+<li><a href="#">CSS3 Features</a>
+<ul> 
+
+<li><a href="opacityeffectsarticle.html">Opacity Effects</a></li>
+<li><a href="transformationeffectsarticle.html">Transformation Effects</a></li>
+<li><a href="transitioneffectsarticle.html">Transition Effects</a></li>
+<li><a href="animationeffectsarticle.html">Animation Effects</a></li>
+
+</ul>
+</li>
+
+<li><a href="#">Entertainment Services</a> 
+<ul>
+          <li><a href="songs.html">Songs</a></li> 
+<li><a href="videos.html">Videos</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</li>
+<li><a href="feedback.html">Feedback</a></li>
+
+<li><a href="about.html">About Us</a></li>          
+        
+        </ul> 
+      </nav> 
+    </header> 
+     <!-- EOF header --> 
+    <div id="main"> 
+
+<H1>Geolocation</H1> 
+
+<P>
+Geolocation API uses common sources to provide location information that includes Global Positioning System (GPS) or location information inferred from network signals, such as Internet Protocol (IP) addresses or Media Access Control (MAC) addresses. You can include Geolocation API in your Web page by using the NavigatorGeolocation interface, which provides an object of the Geolocation interface. The Geolocation interface provides the getCurrentPosition() method to obtain the current location of the device, as shown in the following code snippet: 
+</p>
+<p>
+navigator.geolocation.getCurrentPosition(gotPosition,errorGettingPosition,	{'enableHighAccuracy':true,'timeout':10000,'maximumAge':0});
+<p>
+The Geolocation interface also provides the watchPosition() method to monitor the position of the device and invoke the appropriate callback method when the position changes, as shown in the following code snippet:
+</p>
+<p>
+var watchid = navigator.geolocation.watchPosition(
+gotPosition,
+errorGettingPosition,
+{'enableHighAccuracy':true,'timeout':10000,'maximumAge':20000});
+</p>
+
+<p>
+Click here for demos to see how to Geolocation API:
+<br/>
+<a href="geo.html">demo</a>
+<div>
+Note: You can view this demo in the Opera browser.
+</div>
+</p>
+</div>
+<footer> 
+		<div class="copy">&copy; Copyright 2011, Kogent Learning Solutions Inc.</div> 
+       
+    </footer>
+</div>
+</div>
+</div>
+</body>
+</html>

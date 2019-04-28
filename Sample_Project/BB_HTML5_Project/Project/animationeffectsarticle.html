@@ -1,0 +1,112 @@
+<!doctype html>  
+ 
+<head> 
+  
+ 
+  <title>HTML5 Black Book</title> 
+  
+  <link rel="stylesheet" href="css/style.css"> 
+  
+  <script src="js/libs/modernizr-1.6.min.js"></script> 
+ 
+</head> 
+ 
+<body> 
+<div id="container"> 
+  	<div class="extra_wrap"> 
+  	 <!-- header --> 
+   <header> 
+		 <!-- .logo --> 
+        <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="HTML5 Black Book" title="HTML5 Black Book" /></a></div> 
+        <!-- /.logo --> 
+        <nav> 
+        <ul class="sf-menu"> 
+          <li><a href="index.html" class="current">Home</a></li> 
+<li><a href="#">HTML5 Features</a>
+<ul> 
+
+<li><a href="editablecontentarticle.html">Editable Content</a></li>
+<li><a href="spellcheckarticle.html">Spell Checking</a></li>
+<li><a href="datastoragearticle.html">Data Storage</a></li>
+<li><a href="dndarticle.html">Drag and Drop</a></li>
+<li><a href="notificationarticle.html">Desktop Notification</a></li>
+<li><a href="geolocationarticle.html">Geolocation</a></li>
+
+</ul>
+</li> 
+<li><a href="#">CSS3 Features</a>
+<ul> 
+
+<li><a href="opacityeffectsarticle.html">Opacity Effects</a></li>
+<li><a href="transformationeffectsarticle.html">Transformation Effects</a></li>
+<li><a href="transitioneffectsarticle.html">Transition Effects</a></li>
+<li><a href="animationeffectsarticle.html">Animation Effects</a></li>
+
+</ul>
+</li>
+
+<li><a href="#">Entertainment Services</a> 
+<ul>
+          <li><a href="songs.html">Songs</a></li> 
+<li><a href="videos.html">Videos</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</li>
+<li><a href="feedback.html">Feedback</a></li>
+
+<li><a href="about.html">About Us</a></li>          
+        
+        </ul> 
+      </nav> 
+    </header> 
+     <!-- EOF header --> 
+    <div id="main"> 
+
+<H1>Animation Effects </H1> 
+
+<P>
+Animation is a process of creating the illusion of motion by placing still images one after another in a typical format. For instance, a ball can be made to appear rising from the ground by placing its pictures showing different positions in succession. CSS provides the following properties to enable you to animate different elements of a Web page: 
+</p>
+<p>
+<ul>
+<li>animation-name: Specifies the name of the animation that is to be applied on an element</li>
+<li>animation-duration : Specifies the time duration an animation takes to complete one cycle</li>
+<li>animation-timing-function : Specifies the progress of an animation</li>
+<li>animation-iteration-count: Specifies the number of animation cycles</li>
+<li>animation-direction: Specifies whether the animation is played in reverse or alternate direction</li>
+<li>animation-delay: Specifies a time period after which an animation starts</li>
+</ul> 
+</p>
+<p>
+In addition to the preceding properties, there is a property, named animation, which can  be used as an alternative for all other properties. In other words, the animation property can accept the values of all the other properties, such as animation-name, animation-duration, animation-timing-function, animation-iteration-count, animation-direction, and animation-delay. The following code snippet shows an example of using the animation properties:
+</p>
+<p>
+img {
+	-webkit-animation-name: resize;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: ease;
+}
+</p>
+<p>
+In the preceding code snippet, we have applied the resize animation effect and set the animation duration to 1 second. The iteration count is set to infinite, which means that the animation cycle is repeated infinite times. 
+
+</p>
+<p>
+Click here for demos to see animation effects:
+
+<br/>
+<a href="animation.html">demo</a>
+</p>
+</div>
+<footer> 
+		<div class="copy">&copy; Copyright 2011, Kogent Learning Solutions Inc.</div> 
+       
+    </footer>
+</div>
+</div>
+</div>
+</body>
+</html>

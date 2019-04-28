@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Canvas Compositing Methods</title>
+		<style type="text/css">
+			canvas {
+				border: dotted 1px black;
+				margin: 25px;
+			}
+		</style>
+		<script type="text/javascript">
+		    window.onload = function () {
+		        var theCanvas = document.getElementById('Canvas1');
+		        if (theCanvas && theCanvas.getContext) {
+		            var ctx = theCanvas.getContext("2d");
+		            if (ctx) {
+						var compMethods = ["source-over","source-in","source-out","source-atop","lighter","xor",
+											"destination-over", "destination-in", "destination-out", "destination-atop", "darker", "copy"];
+											
+						var rects = [
+						{ x: 20, y:20, width: 75, height: 75},
+						{ x: 40, y:50, width: 75, height: 75},
+						];
+						
+						var method = 0;
+						// draw a series of rectangles
+						for (var i= 0; i < compMethods.length; i++) {
+							var cvsName = "Canvas" + (i+1);
+							var curCanvas = document.getElementById(cvsName);
+							var exampCtx = curCanvas.getContext("2d");
+							
+							exampCtx.fillStyle = "blue";
+							exampCtx.fillRect(rects[0].x, rects[0].y, rects[0].width, rects[0].height);
+
+							exampCtx.globalCompositeOperation = compMethods[method++];
+
+							exampCtx.fillStyle = "green";						
+							exampCtx.fillRect(rects[1].x, rects[1].y, rects[1].width, rects[1].height);
+						}
+		            }
+		        }
+		    }
+		</script>
+	</head>
+	<body>
+		<h1>The Canvas Compositing Methods</h1>
+		<p>This demo shows how each of the compositing methods affects how drawing operations are made to the canvas.</p>
+		<div>
+			<canvas id="Canvas1" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas2" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas3" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas4" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas5" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas6" width="150" height="150">Your browser does not support canvas.</canvas>
+		</div>
+		<div>
+			<canvas id="Canvas7" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas8" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas9" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas10" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas11" width="150" height="150">Your browser does not support canvas.</canvas>
+			<canvas id="Canvas12" width="150" height="150">Your browser does not support canvas.</canvas>
+		</div>
+	</body>
+</html>

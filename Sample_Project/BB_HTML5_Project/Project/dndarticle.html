@@ -1,0 +1,116 @@
+<!doctype html>  
+ 
+<head> 
+  
+ 
+  <title>HTML5 Black Book</title> 
+  
+  <link rel="stylesheet" href="css/style.css"> 
+  
+  
+  <script src="js/libs/modernizr-1.6.min.js"></script> 
+ 
+</head> 
+ 
+<body> 
+<div id="container"> 
+  	<div class="extra_wrap"> 
+  	 <!-- header --> 
+  <header> 
+		 <!-- .logo --> 
+        <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="HTML5 Black Book" title="HTML5 Black Book" /></a></div> 
+        <!-- /.logo --> 
+        <nav> 
+        <ul class="sf-menu"> 
+          <li><a href="index.html" class="current">Home</a></li> 
+<li><a href="#">HTML5 Features</a>
+<ul> 
+
+<li><a href="editablecontentarticle.html">Editable Content</a></li>
+<li><a href="spellcheckarticle.html">Spell Checking</a></li>
+<li><a href="datastoragearticle.html">Data Storage</a></li>
+<li><a href="dndarticle.html">Drag and Drop</a></li>
+<li><a href="notificationarticle.html">Desktop Notification</a></li>
+<li><a href="geolocationarticle.html">Geolocation</a></li>
+</ul>
+</li> 
+<li><a href="#">CSS3 Features</a>
+<ul> 
+
+<li><a href="opacityeffectsarticle.html">Opacity Effects</a></li>
+<li><a href="transformationeffectsarticle.html">Transformation Effects</a></li>
+<li><a href="transitioneffectsarticle.html">Transition Effects</a></li>
+<li><a href="animationeffectsarticle.html">Animation Effects</a></li>
+
+</ul>
+</li>
+
+<li><a href="#">Entertainment Services</a> 
+<ul>
+          <li><a href="songs.html">Songs</a></li> 
+<li><a href="videos.html">Videos</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="gallery.html">Image Gallery</a></li>
+</ul>
+</li>
+<li><a href="feedback.html">Feedback</a></li>
+
+<li><a href="about.html">About Us</a></li>          
+        
+        </ul> 
+      </nav> 
+    </header> 
+     <!-- EOF header --> 
+    <div id="main"> 
+
+<H1>Drag and Drop</H1> 
+
+<P>
+HTML5 introduces a new feature, called drag and drop, in Web pages. The drag and drop feature allows you to drag a textual data or an image from the source area to target on a Web page, where source and target area can be two containers or text areas. You can perform drag and drop operation by creating a drag data store, which specifies the data that is used for drag and drop operation. It contains a drag data store item list, which is a list of items representing the dragged data, such as text or files. You can create a draggable element by using the draggable attribute and the dragstart event to store the data that has to be dragged. The event handler checks whether the selected text is draggable or not and store the data in the DataTransfer object.
+</p>
+<p>
+The DragEvent interface is used to create objects of the DataTransfer interface and initialize the dragging operation. It provides the dataTransfer attribute and initDragEvent() method for this purpose. The dataTransfer attribute of the DragEvent interface returns an object of the DataTransfer interface. The initDragEvent() method initializes an event to drag the data.
+</p>
+<p>
+You can make a draggable HTML element by using the draggable attribute. The syntax to use the draggable attribute is given as follows:
+</p>
+<p>
+element . draggable [ = value ]
+</p>
+<p>
+In the preceding syntax, the value can be true, false, or auto. The true value indicates that the element is draggable; the false value indicates that the element is not draggable; and the auto value specifies the default behavior of the element.
+</p>
+<p>
+The following code snippet shows an example of using the draggable attribute:
+</p>
+<p>
+&lt BODY &gt
+&lt p draggable="true" &gt You can drag this paragraph &lt/p &gt  
+&lt p draggable="false" &gt You cannot drag this paragraph &lt /p &gt  
+&lt /BODY &gt
+</p>
+<p>
+The HTML elements may specify the dropzone attribute to drop the data. This attribute is specified by using any one of the following values:
+</p>
+<p>
+<ul>
+<li>copy: Creates a copy of the draggable data from source location to a target location</li>
+<li>move: Moves the draggable data from the source location and place it to a target location</li>
+<li>link: Creates a link of the draggable data from source location to a target location</li>
+</ul>
+</p>
+<p>
+Click here for demos to see how to implement drag and drop feature:
+<br/>
+<a href="draganddrop.html">demo</a>
+</p>
+</div>
+<footer> 
+		<div class="copy">&copy; Copyright 2011, Kogent Learning Solutions Inc.</div> 
+       
+    </footer>
+</div>
+</div>
+</div>
+</body>
+</html>

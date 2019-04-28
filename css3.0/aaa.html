@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+
+		body>div
+		{
+			display: flex;
+			flex-flow: row wrap;
+		}
+		body div main,content,header,footer,aside
+		{
+			margin: 20px;padding: 20px; background-color: red; border-radius: 20px;
+		}
+		body div header
+		{
+			order: 1;
+			flex:0 1 100%;
+		}
+		body div nav
+		{
+			order: 2;
+			flex:0 1 100%;
+		}
+		body div main
+		{
+			order: 3;
+			flex:1;
+			height: 500px;
+			min-width: 1px;
+			flex-flow: column wrap;
+		
+		}
+		body div aside
+		{
+			order: 4;
+			flex:1;
+			height: 500px;
+			min-width: 1px;
+			flex-flow: column wrap;
+		}
+		body div footer
+		{
+			order: 5;
+			flex:0 1 100%;
+			align-self: stretch;
+		}
+
+
+
+
+		.navbar ul{
+            overflow: auto;            
+            font-family: Arial;
+		
+			list-style: none;
+        }
+		ul li{            
+			float: left;
+        }
+		ul li a{
+			font: 16px;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			display: block;
+			width: 200px;
+			background-color: green;
+			padding: 10px 10px;
+			
+		}
+	    ul li a:hover{
+			background: lightyellow;
+			color: green;
+			transition: background 1s,color 1s;
+			
+		}
+		ul li ul li{
+			float: none;
+			display: none;
+			
+		}
+		ul li:hover ul li{
+			display: block;			
+		}
+		ul li ul li:hover{
+			display: block;
+		}
+		
+		
+	</style>
+
+</head>
+<body>
+	<div>
+		<header>header</header>
+		<nav>
+	<div style="height: 40px;background-color: green;z-index: 9999; border-radius: 20px;margin: 20px;padding: 20px; display: flex; flex-flow: row wrap;">   
+  <div class="navbar" style="margin-top: 0px;">
+	  <ul>
+		  <li><a href="#Home">Home</a></li>
+          <li><a href="#University info">University info</a>
+			  <ul>
+				  <li><a href="#CE">Computer Engineering</a></li>
+				  <li><a href="#IT">IT Engineering</a></li>
+				  <li><a href="#EC">Electronics and Communication</a></li>
+				  <li><a href="#EE">Electrical Engineering</a></li>
+				  <li><a href="#ME">Mechanical Engineering</a></li>
+				  <li><a href="#CL">Civil Engineering</a></li>
+			  </ul>
+		  </li>
+          <li><a href="#Faculties">Faculties</a>
+			  <ul>
+				  <li><a href="#CE">Computer Engineering</a></li>
+				  <li><a href="#IT">IT Engineering</a></li>
+				  <li><a href="#EC">Electronics and Communication</a></li>
+				  <li><a href="#EE">Electrical Engineering</a></li>
+				  <li><a href="#ME">Mechanical Engineering</a></li>
+				  <li><a href="#CL">Civil Engineering</a></li>
+			  </ul>
+		  </li>
+          <li><a href="#Programme">Programme</a>
+			  <ul>
+				  <li><a href="#Sports">Sports</a></li>
+				  <li><a href="#Cultural">Cultural</a></li>
+				  <li><a href="#Events">Events</a></li>
+				  <li><a href="#Seminars">Seminars</a></li>
+				  <li><a href="#workshops">Workshops</a></li>
+				  <li><a href="#placements">Placements</a></li>
+			  </ul>
+		  </li>
+          <li><a href="#Contact us">Contact us</a></li>
+         
+	  </ul>
+  </div>
+	</nav>
+		<main>content</main>
+		<aside>aside</aside>
+		<footer>footer</footer>
+	</div>
+</body>
+</html>

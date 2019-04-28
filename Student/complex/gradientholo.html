@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<style type="text/css">
+			#Canvas1 {
+				border: dotted 1px black;
+			}
+		</style>
+	
+</head>
+
+<body >
+	<h1>Drawing Gradients</h1>
+		<p>The HTML5 Canvas supports two kinds of gradients - linear and radial.</p>
+		<canvas id="Canvas1" width="700" height="300">Your browser does not support canvas.</canvas>
+</body>
+	
+	
+	
+	<script type="text/javascript">
+		var canvas = document.querySelector('canvas');
+		var randomNumber = Math.floor((Math.random() * 10));
+		var colorArray = ['#272F32', '#9DBDC6', '#FF3D2E', '#DAEAEF','#DBEF4C','#25B6D4','#6A0894','#D38F62','#052074','#155C2B'];
+		var mouse = {
+  x: window.innerWidth / 2,
+  y: window.innerHeight / 2
+};
+		window.addEventListener("mousemove", function(event) {
+  mouse.x = event.clientX;
+  mouse.y = event.clientY;
+});
+
+		var e = canvas.getContext('2d');
+		var ra=[];
+		for(var i=0;i<10;i++)
+			{
+				ra.push(randomNumber);
+				randomNumber = Math.floor((Math.random() * 10));
+			}
+		console.log(ra);
+		
+
+
+  
+		function Star() {
+				this.x=mouse.x;
+				this.y=mouse.y-110;
+			
+
+			this.update = function() {
+
+				
+				
+				if((mouse.x-520)*(mouse.x-520)+((mouse.y-150-110)*(mouse.y-150-110))<(80*80))
+				   {
+				   		
+					   	this.x=mouse.x;
+						this.y=mouse.y-110;
+					   
+					   
+					   
+				   }
+				 
+				
+				
+				
+				this.draw();
+
+
+			}
+			this.draw = function() {
+				
+				e.beginPath();
+			var my_gradient=e.createLinearGradient(0,0,170,170);
+my_gradient.addColorStop(0,"red");
+my_gradient.addColorStop(0.5,"blue");
+my_gradient.addColorStop(1,"green");
+e.fillStyle=my_gradient;
+e.strokeStyle="black";
+e.lineWidth="10";
+e.strokeRect(20,20,150,250);
+e.fillRect(20,20,150,250);
+						e.arc(520,150,80,0,2.5*Math.PI);
+						e.stroke();						
+						var gradient=e.createRadialGradient(this.x,this.y,0,520,150,80);
+				for(var i=0;i<10;i++){
+						gradient.addColorStop(i/10,colorArray[ra[i]]);	
+					 randomNumber = Math.floor((Math.random() * 10));
+							
+				}				
+						e.fillStyle=gradient;
+						e.fill();				
+				
+			}
+		}
+
+		
+		var s=new Star();
+  
+		
+		function animate() {
+			requestAnimationFrame(animate);
+			s.update();
+		}
+
+		animate();
+</script>
+	
+</html>
